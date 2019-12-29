@@ -2,13 +2,13 @@ package Backend;
 
 public class Account {
 
-    private int id;
+    private int accountId;
     private String name;
     private String address;
     private String city;
 
-    public Account(int id, String name, String address, String city) {
-        this.id = id;
+    public Account(int accountId, String name, String address, String city) {
+        this.accountId = accountId;
         this.name = name;
         this.address = address;
         this.city = city;
@@ -16,12 +16,12 @@ public class Account {
 
     // Ieder attribuut heeft een getter en setter.
 
-    public int getId() {
-        return id;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setId(int id) {
-        this.id =  id;
+    public void setAccountId(int accountId) {
+        this.accountId =  accountId;
     }
 
     public String getName() {
@@ -52,7 +52,7 @@ public class Account {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Id: " + this.getId() + "\n");
+        sb.append("Account Id: " + this.getAccountId() + "\n");
         sb.append("Name: " + this.getName() + "\n");
         sb.append("Address: " + this.getAddress() + "\n");
         sb.append("City: " + this.getCity() + "\n");

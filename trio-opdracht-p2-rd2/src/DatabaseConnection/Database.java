@@ -18,7 +18,7 @@ public class Database {
         }
     }
 
-    public Account get(int id) {
+    public Account get(int accountId) {
         String name = "";
         String address = "";
         String city = "";
@@ -26,7 +26,7 @@ public class Database {
         try {
             Connection conn = DriverManager.getConnection(connectionUrl);
             PreparedStatement statement = conn.prepareStatement("SELECT * FROM Account WHERE AccountId=?;");
-            statement.setInt(1, id);
+            statement.setInt(1, accountId);
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -41,7 +41,7 @@ public class Database {
             System.out.println("Error while getting account.");
         }
 
-        return new Account(id, name, address, city);
+        return new Account(accountId, name, address, city);
 
     }
 
@@ -54,12 +54,12 @@ public class Database {
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
-                int id = result.getInt("AccountId");
+                int accountId = result.getInt("AccountId");
                 String name = result.getString("Name");
                 String address = result.getString("Address");
                 String city = result.getString("City");
 
-                accounts.add(new Account(id, name, address, city));
+                accounts.add(new Account(accountId, name, address, city));
             }
 
             conn.close();
