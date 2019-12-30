@@ -6,9 +6,12 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -81,6 +84,60 @@ public class GUI extends Application {
 
             Scene accounts = new Scene(pane1, 500, 100);
             primaryStage.setScene(accounts);
+
+            // EventHandler voor Create Account button.
+            buttonCreateAccount.setOnAction(e1 -> {
+                GridPane grid = new GridPane();
+                grid.setPadding(new Insets(10, 10, 10, 10));
+                grid.setVgap(8);
+                grid.setHgap(10);
+
+                Button buttonSave = new Button("Save");
+                Button buttonCancel = new Button("Cancel");
+
+                buttonCancel.setOnAction(e3 -> {
+                    primaryStage.setScene(accounts);
+                });
+
+                Label accountName = new Label("Name:");
+                Label accountAddress = new Label("Address:");
+                Label accountCity = new Label("City:");
+
+                TextField accountNameInput = new TextField();
+                TextField accountAddressInput = new TextField();
+                TextField accountCityInput = new TextField();
+
+                grid.add(accountName, 0, 0);
+                grid.add(accountNameInput, 1, 0);
+                grid.add(accountAddress, 0, 1);
+                grid.add(accountAddressInput, 1, 1);
+                grid.add(accountCity, 0, 2);
+                grid.add(accountCityInput, 1, 2);
+                grid.add(buttonSave, 2, 3);
+                grid.add(buttonCancel, 3, 3);
+
+                Scene accountCreation = new Scene(grid);
+                primaryStage.setScene(accountCreation);
+
+                buttonSave.setOnAction(e2 -> {
+                    boolean succeeded = db.createAccount(accountNameInput.getText(), accountAddressInput.getText(), accountCityInput.getText());
+                    if (succeeded) {
+                        new Alert(Alert.AlertType.INFORMATION, "Account successfully created.").show();
+                    } else {
+                        new Alert(Alert.AlertType.WARNING, "Failed to create account.").show();
+                    }
+                });
+            });
+
+            // EventHandler voor Edit Account button.
+            buttonEditAccount.setOnAction(e3 -> {
+
+            });
+
+            // EventHandler voor Delete Account button.
+            buttonDeleteAccount.setOnAction(e4 -> {
+
+            });
         });
 
         // EventHandler voor de Profiles Button.

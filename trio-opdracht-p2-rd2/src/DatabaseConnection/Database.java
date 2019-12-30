@@ -25,7 +25,9 @@ public class Database {
 
         try {
             Connection conn = DriverManager.getConnection(connectionUrl);
-            PreparedStatement statement = conn.prepareStatement("SELECT * FROM Account WHERE AccountId=?;");
+            PreparedStatement statement = conn.prepareStatement("SELECT * " +
+                    "FROM Account " +
+                    "WHERE AccountId=?;");
             statement.setInt(1, accountId);
             ResultSet result = statement.executeQuery();
 
@@ -42,7 +44,6 @@ public class Database {
         }
 
         return new Account(accountId, name, address, city);
-
     }
 
     public List<Account> getAll() {
@@ -50,7 +51,8 @@ public class Database {
 
         try {
             Connection conn = DriverManager.getConnection(connectionUrl);
-            PreparedStatement statement = conn.prepareStatement("SELECT * FROM Account;");
+            PreparedStatement statement = conn.prepareStatement("SELECT *" +
+                    " FROM Account;");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -69,6 +71,26 @@ public class Database {
         }
 
         return accounts;
+    }
 
+    public boolean createAccount(String name, String address, String city) {
+        boolean result = false;
+
+        try {
+            Connection conn = DriverManager.getConnection(connectionUrl);
+            PreparedStatement statement = conn.prepareStatement(
+                    "INSERT INTO Account (Name, Address, City) " +
+                            "VALUES (?, ?, ?)");
+            statement.setString(1, name);
+            statement.setString(2, address);
+            statement.setString(3, city);
+            statement.execute();
+            result = true;
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error while creating account.");
+        }
+
+        return result;
     }
 }
