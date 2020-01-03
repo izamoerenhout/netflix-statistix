@@ -1,4 +1,6 @@
-package Backend;
+package appLogic;
+
+import java.util.ArrayList;
 
 public class Series {
 
@@ -7,24 +9,26 @@ public class Series {
     private String language;
     private String ageRating;
     private String suggestion;
+    private ArrayList<Episode> episodeList;
 
-    // Een serie kan ook géén suggestion hebben. We maken dus gebruik van constructor overloading
-    // zodat er zowel een Series object mét als zónder suggestion gemaakt kan worden.
+    // There is a possibility that a series has no suggestion, hence the use of constructor overloading
+    // so that Series objects with or without a suggestion can both be created.
 
     public Series(String seriesTitle, String genre, String language, String ageRating) {
         this.seriesTitle = seriesTitle;
         this.genre = genre;
         this.language = language;
         this.ageRating = ageRating;
+        this.episodeList = new ArrayList<>();
     }
 
     public Series(String seriesTitle, String genre, String language, String ageRating, String suggestion) {
         this(seriesTitle, genre, language, ageRating);
         this.suggestion = suggestion;
+        this.episodeList = new ArrayList<>();
     }
 
-    // Ieder attribuut heeft een getter en setter.
-
+    // Every class atrribute has its own getter and setter.
 
     public String getSeriesTitle() {
         return seriesTitle;
@@ -66,16 +70,11 @@ public class Series {
         this.suggestion = suggestion;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
+    public ArrayList<Episode> getEpisodeList() {
+        return episodeList;
+    }
 
-        sb.append("Series title: " + this.getSeriesTitle() + "\n");
-        sb.append("Genre: " + this.getGenre() + "\n");
-        sb.append("Language: " + this.getLanguage() + "\n");
-        sb.append("Age rating: " + this.getAgeRating() + "\n");
-        sb.append("Suggestion: " + this.getSuggestion() + "\n");
-
-        return sb.toString();
+    public void setEpisodeList(ArrayList<Episode> episodeList) {
+        this.episodeList = episodeList;
     }
 }

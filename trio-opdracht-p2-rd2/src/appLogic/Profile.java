@@ -1,19 +1,22 @@
-package Backend;
+package appLogic;
+
+import java.util.ArrayList;
 
 public class Profile {
 
     private int id;
     private String profileName;
     private int age;
+    private ArrayList<Watched> watchedPrograms;
 
     public Profile(int id, String profileName, int age) {
         this.id = id;
         this.profileName = profileName;
         this.age = age;
+        this.watchedPrograms = new ArrayList<>();
     }
 
-    // Ieder attribuut heeft een getter en setter.
-
+    // Every class atrribute has its own getter and setter.
 
     public int getId() {
         return id;
@@ -39,14 +42,11 @@ public class Profile {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
+    public ArrayList<Watched> getWatchedPrograms() {
+        return watchedPrograms;
+    }
 
-        sb.append("Id: " + this.getId() + "\n");
-        sb.append("Profile name: " + this.getProfileName() + "\n");
-        sb.append("Age: " + this.getAge() + "\n");
-
-        return sb.toString();
+    public void setWatchedPrograms(ArrayList<Watched> watchedPrograms) {
+        this.watchedPrograms = watchedPrograms;
     }
 }

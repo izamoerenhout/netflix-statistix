@@ -1,4 +1,6 @@
-package Backend;
+package appLogic;
+
+import java.util.ArrayList;
 
 public class Account {
 
@@ -14,7 +16,7 @@ public class Account {
         this.city = city;
     }
 
-    // Ieder attribuut heeft een getter en setter.
+    // Every class atrribute has its own getter and setter.
 
     public int getAccountId() {
         return accountId;
@@ -46,17 +48,5 @@ public class Account {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("Account Id: " + this.getAccountId() + "\n");
-        sb.append("Name: " + this.getName() + "\n");
-        sb.append("Address: " + this.getAddress() + "\n");
-        sb.append("City: " + this.getCity() + "\n");
-
-        return sb.toString();
     }
 }

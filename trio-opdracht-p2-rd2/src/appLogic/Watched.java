@@ -1,21 +1,20 @@
-package Backend;
+package appLogic;
 
 public class Watched {
 
     private int accountId;
     private String profileName;
     private int programId;
-    private int perctWatched;
+    private double perctWatched;
 
-    public Watched(int accountId, String profileName, int programId, int perctWatched) {
+    public Watched(int accountId, String profileName, int programId, double perctWatched) {
         this.accountId = accountId;
         this.profileName = profileName;
         this.programId = programId;
         this.perctWatched = perctWatched;
     }
 
-    // Ieder attribuut heeft een getter en setter.
-
+    // Every class atrribute has its own getter and setter.
 
     public int getAccountId() {
         return accountId;
@@ -41,23 +40,11 @@ public class Watched {
         this.programId = programId;
     }
 
-    public int getPerctWatched() {
+    public double getPerctWatched() {
         return perctWatched;
     }
 
-    public void setPerctWatched(int perctWatched) {
+    public void setPerctWatched(double perctWatched) {
         this.perctWatched = perctWatched;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("Account Id: " + this.getAccountId() + "\n");
-        sb.append("Profile name: " + this.getProfileName() + "\n");
-        sb.append("Program Id: " + this.getProgramId() + "\n");
-        sb.append("% watched: " + this.getPerctWatched() + "\n");
-
-        return sb.toString();
     }
 }

@@ -1,16 +1,16 @@
-package DatabaseConnection;
+package database;
 
-import Backend.Account;
+import appLogic.Account;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
+public class DatabaseConnection {
 
     private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;";
 
-    public Database() {
+    public DatabaseConnection() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException e) {

@@ -1,7 +1,6 @@
-package GUI;
+package gui;
 
-import Backend.Account;
-import DatabaseConnection.Database;
+import database.DatabaseConnection;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,23 +14,20 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-import java.util.List;
-
 public class GUI extends Application {
 
-    List<Account> accounts;
-    Database db = new Database();
+    DatabaseConnection db = new DatabaseConnection();
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        // Drie buttons en een Label voor de eerste scene.
+    public void start(Stage stage) throws Exception {
+        // Three buttons and a Label for the first scene.
         Button buttonAccounts = new Button("Accounts");
         Button buttonProfiles = new Button("Profiles");
         Button buttonWatched = new Button("Watched");
         Label pickAnOption = new Label("Pick an option:");
 
-        // Twee HBoxes, de eerste voor de Label, de andere voor de drie Buttons.
-        // Beide HBoxes hebben center alignment.
+        // Two HBoxes, first one for the Label, the other one for the three Buttons.
+        // Both HBoxes are aligned in the center.
         HBox options = new HBox(12);
         options.setAlignment(Pos.CENTER);
         options.getChildren().addAll(buttonAccounts, buttonProfiles, buttonWatched);
@@ -39,9 +35,9 @@ public class GUI extends Application {
         text.setAlignment(Pos.CENTER);
         text.getChildren().add(pickAnOption);
 
-        // De HBoxes worden gestopt in een BorderPane.
-        // HBox "text" heeft een top margin van 20 en HBox "options" een bottom margin van 20,
-        // zo wordt de BorderPane netjes uitgelijnd in het midden van de scene.
+        // The HBoxes are placed in a BorderPane.
+        // HBox "text" has a top margin of 20 and HBox "options" has a bottom margin of 20.
+        // This way, the BorderPane will be nicely aligned in the middle of the scene.
         BorderPane pane = new BorderPane();
         pane.setTop(text);
         pane.setMargin(text, new Insets(20, 0, 0 , 0));
@@ -50,12 +46,12 @@ public class GUI extends Application {
 
         Scene selectionScreen = new Scene(pane, 500, 100);
 
-        primaryStage.setTitle("Netflix Statistix door S. Jaspers, I. Moerenhout en Z. Usmaeva");
-        primaryStage.setResizable(false);
-        primaryStage.setScene(selectionScreen);
-        primaryStage.show();
+        stage.setTitle("Netflix Statistix door S. Jaspers, I. Moerenhout en Z. Usmaeva");
+        stage.setResizable(false);
+        stage.setScene(selectionScreen);
+        stage.show();
 
-        // EventHandler voor de Accounts Button.
+        // EventHandler for the Accounts Button.
         buttonAccounts.setOnAction(e -> {
             Button buttonCreateAccount = new Button("Create");
             Button buttonEditAccount = new Button("Edit");
@@ -63,7 +59,7 @@ public class GUI extends Application {
             Button back = new Button("Back");
             Label createEditOrDelete = new Label("Create a new account, or edit/delete an existing account:");
 
-            back.setOnAction(e1 -> primaryStage.setScene(selectionScreen));
+            back.setOnAction(e1 -> stage.setScene(selectionScreen));
 
             HBox text1 = new HBox();
             text1.setAlignment(Pos.CENTER);
@@ -83,9 +79,9 @@ public class GUI extends Application {
             pane1.setBottom(text2);
 
             Scene accounts = new Scene(pane1, 500, 100);
-            primaryStage.setScene(accounts);
+            stage.setScene(accounts);
 
-            // EventHandler voor Create Account button.
+            // EventHandler for the Create Account button.
             buttonCreateAccount.setOnAction(e1 -> {
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(10, 10, 10, 10));
@@ -96,7 +92,7 @@ public class GUI extends Application {
                 Button buttonCancel = new Button("Cancel");
 
                 buttonCancel.setOnAction(e3 -> {
-                    primaryStage.setScene(accounts);
+                    stage.setScene(accounts);
                 });
 
                 Label accountName = new Label("Name:");
@@ -117,7 +113,7 @@ public class GUI extends Application {
                 grid.add(buttonCancel, 3, 3);
 
                 Scene accountCreation = new Scene(grid);
-                primaryStage.setScene(accountCreation);
+                stage.setScene(accountCreation);
 
                 buttonSave.setOnAction(e2 -> {
                     boolean succeeded = db.createAccount(accountNameInput.getText(), accountAddressInput.getText(), accountCityInput.getText());
@@ -129,18 +125,18 @@ public class GUI extends Application {
                 });
             });
 
-            // EventHandler voor Edit Account button.
+            // EventHandler for the Edit Account button.
             buttonEditAccount.setOnAction(e3 -> {
 
             });
 
-            // EventHandler voor Delete Account button.
+            // EventHandler for the Delete Account button.
             buttonDeleteAccount.setOnAction(e4 -> {
 
             });
         });
 
-        // EventHandler voor de Profiles Button.
+        // EventHandler for the Profiles Button.
         buttonProfiles.setOnAction(e -> {
             Button buttonCreateProfile = new Button("Create");
             Button buttonEditProfile = new Button("Edit");
@@ -148,7 +144,7 @@ public class GUI extends Application {
             Button back = new Button("Back");
             Label createEditOrDelete = new Label("Create a new profile, or edit/delete an existing profile:");
 
-            back.setOnAction(e1 -> primaryStage.setScene(selectionScreen));
+            back.setOnAction(e1 -> stage.setScene(selectionScreen));
 
             HBox text1 = new HBox();
             text1.setAlignment(Pos.CENTER);
@@ -168,10 +164,10 @@ public class GUI extends Application {
             pane1.setBottom(text2);
 
             Scene profiles = new Scene(pane1, 500, 100);
-            primaryStage.setScene(profiles);
+            stage.setScene(profiles);
         });
 
-        // EventHandler voor de Watched Button.
+        // EventHandler for the Watched Button.
         buttonWatched.setOnAction(e -> {
             Button buttonAddWatched = new Button("Add");
             Button buttonEditWatched = new Button("Edit");
@@ -179,7 +175,7 @@ public class GUI extends Application {
             Button back = new Button("Back");
             Label createEditOrDelete = new Label("Add a new watched program, or edit/delete an existing watched program:");
 
-            back.setOnAction(e1 -> primaryStage.setScene(selectionScreen));
+            back.setOnAction(e1 -> stage.setScene(selectionScreen));
 
             HBox text1 = new HBox();
             text1.setAlignment(Pos.CENTER);
@@ -199,7 +195,35 @@ public class GUI extends Application {
             pane1.setBottom(text2);
 
             Scene watched = new Scene(pane1, 500, 100);
-            primaryStage.setScene(watched);
+            stage.setScene(watched);
         });
+    }
+
+    public void showAccountsScreen(Stage stage) {
+        Button buttonCreateAccount = new Button("Create");
+        Button buttonEditAccount = new Button("Edit");
+        Button buttonDeleteAccount = new Button("Delete");
+        Button back = new Button("Back");
+        Label createEditOrDelete = new Label("Create a new account, or edit/delete an existing account:");
+
+        HBox text1 = new HBox();
+        text1.setAlignment(Pos.CENTER);
+        text1.getChildren().add(createEditOrDelete);
+        HBox options1 = new HBox(12);
+        options1.setAlignment(Pos.CENTER);
+        options1.getChildren().addAll(buttonCreateAccount, buttonEditAccount, buttonDeleteAccount);
+        HBox text2 = new HBox();
+        text2.setSpacing(50);
+        text2.getChildren().add(back);
+
+        BorderPane pane1 = new BorderPane();
+        pane1.setTop(text1);
+        pane1.setMargin(text1, new Insets(15, 0, 0, 0));
+        pane1.setCenter(options1);
+        pane1.setMargin(options1, new Insets(0, 0, 15, 0));
+        pane1.setBottom(text2);
+
+        Scene accountsScreen = new Scene(pane1, 500, 100);
+        stage.setScene(accountsScreen);
     }
 }

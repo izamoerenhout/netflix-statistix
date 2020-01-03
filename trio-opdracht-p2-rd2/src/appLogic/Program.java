@@ -1,6 +1,8 @@
-package Backend;
+package appLogic;
 
-public class Program {
+// Abstract parent class for the child classes Movie and Episode.
+
+public abstract class Program {
 
     private int programId;
     private String programName;
@@ -12,8 +14,7 @@ public class Program {
         this.length = length;
     }
 
-    // Ieder attribuut heeft een getter en setter.
-
+    // Every class attribute has its own getter and setter.
 
     public int getProgramId() {
         return programId;
@@ -37,16 +38,5 @@ public class Program {
 
     public void setLength(String length) {
         this.length = length;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("Program Id: " + this.getProgramId() + "\n");
-        sb.append("Program name: " + this.getProgramName() + "\n");
-        sb.append("Length: " + this.getLength() + "\n");
-
-        return sb.toString();
     }
 }
