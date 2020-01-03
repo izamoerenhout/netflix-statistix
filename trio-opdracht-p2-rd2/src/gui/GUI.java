@@ -116,12 +116,7 @@ public class GUI extends Application {
                 stage.setScene(accountCreation);
 
                 buttonSave.setOnAction(e2 -> {
-                    boolean succeeded = db.createAccount(accountNameInput.getText(), accountAddressInput.getText(), accountCityInput.getText());
-                    if (succeeded) {
-                        new Alert(Alert.AlertType.INFORMATION, "Account successfully created.").show();
-                    } else {
-                        new Alert(Alert.AlertType.WARNING, "Failed to create account.").show();
-                    }
+
                 });
             });
 
