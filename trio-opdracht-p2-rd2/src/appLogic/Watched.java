@@ -5,9 +5,9 @@ public class Watched {
     private int accountId;
     private String profileName;
     private int programId;
-    private double perctWatched;
+    private int perctWatched;
 
-    public Watched(int accountId, String profileName, int programId, double perctWatched) {
+    public Watched(int accountId, String profileName, int programId, int perctWatched) {
         this.accountId = accountId;
         this.profileName = profileName;
         this.programId = programId;
@@ -40,11 +40,11 @@ public class Watched {
         this.programId = programId;
     }
 
-    public double getPerctWatched() {
+    public int getPerctWatched() {
         return perctWatched;
     }
 
-    public void setPerctWatched(double perctWatched) {
+    public void setPerctWatched(int perctWatched) {
         this.perctWatched = perctWatched;
     }
 }

@@ -1,11 +1,13 @@
+import database.AccountDAO;
 import database.DatabaseConnection;
 import database.ProfileDAO;
+import database.WatchedDAO;
 
 public class Main {
 
     public static void main(String[] args) {
-        ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnection());
+        WatchedDAO watchedDAO = new WatchedDAO(new DatabaseConnection());
 
-        profileDAO.insertProfile(1, "Gerda", 51);
+        watchedDAO.deleteWatched(2, "Iza", 2001);
     }
 }
