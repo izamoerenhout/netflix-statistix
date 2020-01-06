@@ -21,4 +21,12 @@ public class MainMenuController {
 
         stage.setScene(new Scene(root));
     }
+
+    public void showProfilesScreen() throws Exception {
+        stage = Main.getPrimaryStage();
+
+        Parent root = FXMLLoader.load(getClass().getResource("ProfilesScreen.fxml"));
+
+        stage.setScene(new Scene(root));
+    }
 }
