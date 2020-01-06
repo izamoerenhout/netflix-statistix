@@ -23,7 +23,7 @@
             <TextField fx:id="nameInput" promptText="Name" />
             <TextField fx:id="addressInput" promptText="Address" />
             <TextField fx:id="cityInput" promptText="City" />
-            <Button fx:id="buttonAdd" mnemonicParsing="false" text="Add">
+            <Button fx:id="buttonAdd" mnemonicParsing="false" text="Add" onAction="#addAccount">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>

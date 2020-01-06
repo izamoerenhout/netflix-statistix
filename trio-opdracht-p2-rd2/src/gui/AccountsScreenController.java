@@ -1,6 +1,7 @@
 package gui;
 
 import appLogic.Account;
+import database.AccountDAO;
 import database.DatabaseConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,10 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -49,6 +47,8 @@ public class AccountsScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Retrieving accounts from the database...");
+
         // Retrieve accounts from database and put them into the TableView.
         populateTableView();
     }
@@ -92,6 +92,24 @@ public class AccountsScreenController implements Initializable {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    // Calls the insertAccount method from AccountDAO and adds a new account into the database.
+    public void addAccount() {
+        AccountDAO account = new AccountDAO(new DatabaseConnection());
+        boolean successful = account.insertAccount(nameInput.getText(), addressInput.getText(), cityInput.getText());
+
+        if (successful) {
+            Alert success = new Alert(Alert.AlertType.INFORMATION);
+            success.setTitle("Account creation success");
+            success.setContentText("Account has been added successfully.");
+            success.show();
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Account creation failed");
+            failed.setContentText("Failed to add account.");
         }
     }
 }
