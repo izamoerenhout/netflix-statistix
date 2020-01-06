@@ -1,7 +1,5 @@
 package appLogic;
 
-import java.util.ArrayList;
-
 public class Account {
 
     private int accountId;
