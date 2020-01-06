@@ -35,6 +35,7 @@ public class AccountsScreenController implements Initializable {
     public TableColumn<Account, String> col_address;
     public TableColumn<Account, String> col_city;
     public Button buttonAdd;
+    public Button buttonBack;
 
     private ObservableList<Account> list;
 
