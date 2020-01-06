@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.WatchedScreenController">
+    <children>
+
+        <Label prefHeight="35.0" prefWidth="174.0" text="Select an option" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+            <children>
+                <Button alignment="TOP_LEFT" text="Create" fx:id="buttonCreateWatched" />
+                <Button mnemonicParsing="false" text="Edit" fx:id="buttonEditWatched" />
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Delete" fx:id="buttonDeleteWatched" />
+            </children>
+        </HBox>
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <padding>
+        <Insets top="20.0" />
+    </padding>
+
+</VBox>

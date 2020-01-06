@@ -28,5 +28,17 @@ public class MainMenuController {
         Parent root = FXMLLoader.load(getClass().getResource("ProfilesScreen.fxml"));
 
         stage.setScene(new Scene(root));
+
     }
+
+    public void showWatchedScreen() throws Exception {
+        stage = Main.getPrimaryStage();
+
+        Parent root = FXMLLoader.load(getClass().getResource("WatchedScreen.fxml"));
+
+        stage.setScene(new Scene(root));
+
+
+    }
+
 }

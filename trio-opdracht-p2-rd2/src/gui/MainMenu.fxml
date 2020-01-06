@@ -19,7 +19,7 @@
          <children>
              <Button fx:id="buttonAccounts" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#showAccountsScreen" text="Accounts" />
             <Button fx:id="buttonProfiles" mnemonicParsing="false" onAction="#showProfilesScreen" text="Profiles" />
-            <Button fx:id="buttonWatched" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Watched" />
+            <Button fx:id="buttonWatched" alignment="CENTER" onAction="#showWatchedScreen" contentDisplay="CENTER" mnemonicParsing="false" text="Watched" />
          </children>
       </HBox>
    </children>
