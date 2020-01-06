@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03cb7c7f-8d90-48fc-8244-5d61ee7c44c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_7_4_1_jre12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/trio_opdracht_p2_rd2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/trio_opdracht_p2_rd2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appLogic/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appLogic/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/AccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/AccountsScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AccountsScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/AccountsScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AccountsScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ProfilesScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ProfilesScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ProfilesScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ProfilesScreenController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,76 +17,53 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/MainMenu.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+            <state relative-caret-position="289">
+              <caret line="17" column="83" lean-forward="true" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/AccountsScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="61" column="164" selection-start-line="61" selection-start-column="164" selection-end-line="61" selection-end-column="164" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DatabaseConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="138" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="138" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/AccountDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="23" column="69" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/MainMenuController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/AccountsScreen.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+            <state relative-caret-position="306">
+              <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="91" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/ProfilesScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/ProfilesScreen.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -109,6 +79,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>iz</find>
+      <find>back</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,12 +121,9 @@
         <option value="$PROJECT_DIR$/src/database/SeriesDAO.java" />
         <option value="$PROJECT_DIR$/src/appLogic/Watched.java" />
         <option value="$PROJECT_DIR$/src/database/WatchedDAO.java" />
-        <option value="$PROJECT_DIR$/src/gui/ProfilesScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/gui/ProfilesScreenController.java" />
         <option value="$PROJECT_DIR$/src/gui/WatchedScreenController.java" />
         <option value="$PROJECT_DIR$/src/gui/WatchedScreen.fxml" />
         <option value="$PROJECT_DIR$/src/gui/MainMenu.fxml" />
-        <option value="$PROJECT_DIR$/src/gui/AccountsScreen.fxml" />
         <option value="$PROJECT_DIR$/src/database/AccountDAO.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
@@ -166,14 +134,17 @@
         <option value="$PROJECT_DIR$/src/database/DatabaseConnection.java" />
         <option value="$PROJECT_DIR$/src/appLogic/Account.java" />
         <option value="$PROJECT_DIR$/src/gui/AccountsScreenController.java" />
+        <option value="$PROJECT_DIR$/src/gui/AccountsScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/ProfilesScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/ProfilesScreenController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-195" />
     <option name="y" value="180" />
-    <option name="width" value="1938" />
-    <option name="height" value="1058" />
+    <option name="width" value="1939" />
+    <option name="height" value="1059" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -183,6 +154,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,12 +190,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578348129199" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578349667024" />
     <property name="last_opened_file_path" value="$PATH_TO_FX$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -385,14 +356,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578318106843</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Back Button in vernieuwde AccountsScreen">
+      <created>1578349249160</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1578349249160</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18710022" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18993288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -401,7 +379,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33144477" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -410,7 +388,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="TMC Test Results" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -421,36 +399,6 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13539445" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="TMC Test Results" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="TMC Project List" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-" />
@@ -462,7 +410,8 @@
     <MESSAGE value="Uitbreiden functionaliteit DAO's" />
     <MESSAGE value="Aanmaken ProfilesScreen" />
     <MESSAGE value="Aanmaken WatchedScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aanmaken WatchedScreen" />
+    <MESSAGE value="Back Button in vernieuwde AccountsScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Back Button in vernieuwde AccountsScreen" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/io/FileReader.java">
@@ -590,8 +539,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GUI.java" />
-    <entry file="file://$PROJECT_DIR$/src/gui/ProfilesScreenController.java" />
-    <entry file="file://$PROJECT_DIR$/src/gui/ProfilesScreen.fxml" />
     <entry file="jar://$PATH_TO_FX$/javafx.controls.jar!/javafx/scene/control/ButtonBase.class" />
     <entry file="file://$PROJECT_DIR$/src/gui/WatchedScreenController.java" />
     <entry file="file://$PROJECT_DIR$/src/gui/WatchedScreen.fxml" />
@@ -602,26 +549,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MainMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/appLogic/Account.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -629,42 +557,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/AccountsScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MainMenu.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/AccountDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="23" column="69" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/DatabaseConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="102">
           <caret line="7" column="138" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="138" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -672,10 +567,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/MainMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/MainMenu.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="83" lean-forward="true" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/AccountsScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="91" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/ProfilesScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/AccountsScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="61" column="164" selection-start-line="61" selection-start-column="164" selection-end-line="61" selection-end-column="164" />
+        <state relative-caret-position="85">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/ProfilesScreenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
