@@ -7,13 +7,11 @@ public class Profile {
     private int id;
     private String profileName;
     private int age;
-    private ArrayList<Watched> watchedPrograms;
 
     public Profile(int id, String profileName, int age) {
         this.id = id;
         this.profileName = profileName;
         this.age = age;
-        this.watchedPrograms = new ArrayList<>();
     }
 
     // Every class atrribute has its own getter and setter.
@@ -40,13 +38,5 @@ public class Profile {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public ArrayList<Watched> getWatchedPrograms() {
-        return watchedPrograms;
-    }
-
-    public void setWatchedPrograms(ArrayList<Watched> watchedPrograms) {
-        this.watchedPrograms = watchedPrograms;
     }
 }

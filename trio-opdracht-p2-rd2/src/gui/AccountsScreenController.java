@@ -103,13 +103,16 @@ public class AccountsScreenController implements Initializable {
         if (successful) {
             Alert success = new Alert(Alert.AlertType.INFORMATION);
             success.setTitle("Account creation success");
+            success.setHeaderText(null);
             success.setContentText("Account has been added successfully.");
             success.show();
             populateTableView();
         } else {
             Alert failed = new Alert(Alert.AlertType.WARNING);
             failed.setTitle("Account creation failed");
+            failed.setHeaderText(null);
             failed.setContentText("Failed to add account.");
+            failed.show();
         }
     }
 }
