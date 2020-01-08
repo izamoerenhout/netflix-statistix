@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03cb7c7f-8d90-48fc-8244-5d61ee7c44c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/logic/AccountsScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/logic/AccountsScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/logic/ProfilesScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/logic/ProfilesScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/logic/WatchedScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/logic/WatchedScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +26,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/logic/AccountsScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
+            <state relative-caret-position="271">
               <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -83,6 +90,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Iza Moerenhout &lt;iza.moerenhout@hotmail.com&gt;" />
         <option value="Stefan Jaspers &lt;ag.jaspers@student.avans.nl&gt;" />
         <option value="Zareta &lt;z.usmaeva@student.avans.nl&gt;" />
         <option value="Iza" />
@@ -139,6 +147,7 @@
         <option value="$PROJECT_DIR$/src/gui/logic/ProfilesScreenController.java" />
         <option value="$PROJECT_DIR$/src/gui/logic/WatchedScreenController.java" />
         <option value="$PROJECT_DIR$/src/gui/logic/AccountsScreenController.java" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml" />
       </list>
     </option>
   </component>
@@ -187,6 +196,13 @@
               <item name="trio-opdracht-p2-rd2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trio-opdracht-p2-rd2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trio-opdracht-p2-rd2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="fxml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trio-opdracht-p2-rd2" type="b2602c69:ProjectViewProjectNode" />
@@ -402,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578512339275</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Functionaliteit accountscreen">
+      <created>1578515512101</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1578515512102</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -483,7 +506,8 @@
     <MESSAGE value="Back Button ProfilesScreen" />
     <MESSAGE value="Functionaliteit uitbreiden" />
     <MESSAGE value="Databaseconnectie voor MSSQLSERVER" />
-    <option name="LAST_COMMIT_MESSAGE" value="Databaseconnectie voor MSSQLSERVER" />
+    <MESSAGE value="Functionaliteit accountscreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Functionaliteit accountscreen" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/io/FileReader.java">
@@ -630,14 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -708,8 +724,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/logic/AccountsScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
+        <state relative-caret-position="271">
           <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
         </state>
       </provider>
     </entry>
