@@ -1,5 +1,6 @@
-package gui;
+package gui.logic;
 
+import gui.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,7 +17,7 @@ public class MainMenuController {
     public void showAccountsScreen() throws Exception {
         stage = Main.getPrimaryStage();
 
-        Parent root = FXMLLoader.load(getClass().getResource("AccountsScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/AccountsScreen.fxml"));
 
         stage.setScene(new Scene(root));
     }
@@ -24,7 +25,7 @@ public class MainMenuController {
     public void showProfilesScreen() throws Exception {
         stage = Main.getPrimaryStage();
 
-        Parent root = FXMLLoader.load(getClass().getResource("ProfilesScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/ProfilesScreen.fxml"));
 
         stage.setScene(new Scene(root));
 
@@ -33,7 +34,7 @@ public class MainMenuController {
     public void showWatchedScreen() throws Exception {
         stage = Main.getPrimaryStage();
 
-        Parent root = FXMLLoader.load(getClass().getResource("WatchedScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/WatchedScreen.fxml"));
 
         stage.setScene(new Scene(root));
 

@@ -1,11 +1,9 @@
-package gui;
+package gui.logic;
 
-import appLogic.Account;
-import appLogic.Profile;
 import appLogic.Watched;
 import database.DatabaseConnection;
-import database.ProfileDAO;
 import database.WatchedDAO;
+import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -44,7 +42,7 @@ public class WatchedScreenController implements Initializable {
     public void returnToMainMenu() throws Exception {
         stage = Main.getPrimaryStage();
 
-        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/MainMenu.fxml"));
 
         stage.setScene(new Scene(root));
     }

@@ -1,8 +1,9 @@
-package gui;
+package gui.logic;
 
 import appLogic.Account;
 import database.AccountDAO;
 import database.DatabaseConnection;
+import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +41,7 @@ public class AccountsScreenController implements Initializable {
     public void returnToMainMenu() throws Exception {
         stage = Main.getPrimaryStage();
 
-        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/MainMenu.fxml"));
 
         stage.setScene(new Scene(root));
     }
