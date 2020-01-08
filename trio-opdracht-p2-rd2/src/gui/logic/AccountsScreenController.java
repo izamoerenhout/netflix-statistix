@@ -61,8 +61,8 @@ public class AccountsScreenController implements Initializable {
 
         try {
             // Connect to the database.
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
-//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
+//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
+            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
 
             // Form an SQL query.
             String query = "SELECT * FROM Account";
@@ -109,12 +109,18 @@ public class AccountsScreenController implements Initializable {
             success.setContentText("Account has been added successfully.");
             success.show();
             populateTableView();
+            nameInput.clear();
+            addressInput.clear();
+            cityInput.clear();
         } else {
             Alert failed = new Alert(Alert.AlertType.WARNING);
             failed.setTitle("Account creation failed");
             failed.setHeaderText(null);
             failed.setContentText("Failed to add account.");
             failed.show();
+            nameInput.clear();
+            addressInput.clear();
+            cityInput.clear();
         }
     }
 }
