@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -60,10 +61,16 @@ public class AccountsScreenController implements Initializable {
         // Instantiate list.
         list = FXCollections.observableArrayList();
 
+        // Make the name, address and city column editable.
+        tableAccount.setEditable(true);
+        col_name.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_address.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_city.setCellFactory(TextFieldTableCell.forTableColumn());
+
         try {
             // Connect to the database.
-//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
+            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
+//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
 
             // Form an SQL query.
             String query = "SELECT * FROM Account";
@@ -100,8 +107,8 @@ public class AccountsScreenController implements Initializable {
 
     // Calls the insertAccount method from AccountDAO and adds a new account into the database.
     public void addAccount() {
-        AccountDAO account = new AccountDAO(new DatabaseConnection());
-        boolean successful = account.insertAccount(nameInput.getText(), addressInput.getText(), cityInput.getText());
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        boolean successful = accountDAO.insertAccount(nameInput.getText(), addressInput.getText(), cityInput.getText());
 
         if (successful) {
             Alert success = new Alert(Alert.AlertType.INFORMATION);
@@ -122,6 +129,26 @@ public class AccountsScreenController implements Initializable {
             nameInput.clear();
             addressInput.clear();
             cityInput.clear();
+        }
+    }
+
+    public void onEditUpdateAccountName(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
+        // Update value of cell in TableView to new value entered by user.
+        Account accountName = tableAccount.getSelectionModel().getSelectedItem();
+        accountName.setName(accountStringCellEditEvent.getNewValue());
+
+        // Update value in the database.
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        boolean successful = accountDAO.updateAccountName(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
+
+        if (successful) {
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Account update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update account name.");
+            failed.show();
         }
     }
 }

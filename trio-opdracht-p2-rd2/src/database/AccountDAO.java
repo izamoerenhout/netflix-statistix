@@ -100,7 +100,7 @@ public class AccountDAO {
         return accountList;
     }
 
-    // Updates an existing account in the database.
+    // Updates the name of an existing account in the database.
     public boolean updateAccount(String name, String address, String city, int id) {
         // Connect to the database.
         Connection connection = databaseConnection.getConnection();
@@ -110,6 +110,105 @@ public class AccountDAO {
             String query = String.format("UPDATE Account SET Name = '%s', Address = '%s', City = '%s' WHERE AccountId = %d",
                     name,
                     address,
+                    city,
+                    id);
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the update.
+            statement.executeUpdate(query);
+
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    // Updates the name of an existing account in the database.
+    public boolean updateAccountName(String name, int id) {
+        // Connect to the database.
+        Connection connection = databaseConnection.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = String.format("UPDATE Account SET Name = '%s' WHERE AccountId = %d",
+                    name,
+                    id);
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the update.
+            statement.executeUpdate(query);
+
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    // Updates the address of an existing account in the database.
+    public boolean updateAccountAddress(String address, int id) {
+        // Connect to the database.
+        Connection connection = databaseConnection.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = String.format("UPDATE Account SET Address = '%s' WHERE AccountId = %d",
+                    address,
+                    id);
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the update.
+            statement.executeUpdate(query);
+
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    // Updates the name of an existing account in the database.
+    public boolean updateAccountCity(String city, int id) {
+        // Connect to the database.
+        Connection connection = databaseConnection.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = String.format("UPDATE Account SET City = '%s' WHERE AccountId = %d",
                     city,
                     id);
 

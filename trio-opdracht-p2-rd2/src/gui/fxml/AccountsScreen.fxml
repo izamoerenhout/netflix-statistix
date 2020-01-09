@@ -13,7 +13,7 @@
       <TableView fx:id="tableAccount" prefHeight="350.0" prefWidth="650.0">
         <columns>
           <TableColumn fx:id="col_id" prefWidth="84.0" text="AccountId" />
-          <TableColumn fx:id="col_name" prefWidth="167.0" text="Name" />
+          <TableColumn fx:id="col_name" onEditCommit="#onEditUpdateAccountName" prefWidth="167.0" text="Name" />
             <TableColumn fx:id="col_address" prefWidth="264.0" text="Address" />
             <TableColumn fx:id="col_city" prefWidth="134.0" text="City" />
         </columns>
