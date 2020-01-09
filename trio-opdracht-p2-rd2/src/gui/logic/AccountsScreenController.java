@@ -68,8 +68,8 @@ public class AccountsScreenController implements Initializable {
 
         try {
             // Connect to the database.
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
-//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
+//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
+            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
 
             // Form an SQL query.
             String query = "SELECT * FROM Account";
@@ -147,6 +147,46 @@ public class AccountsScreenController implements Initializable {
             failed.setTitle("Account update failed");
             failed.setHeaderText(null);
             failed.setContentText("Failed to update account name.");
+            failed.show();
+        }
+    }
+
+    public void onEditUpdateAccountAddress(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
+        // Update value of cell in TableView to new value entered by user.
+        Account accountName = tableAccount.getSelectionModel().getSelectedItem();
+        accountName.setAddress(accountStringCellEditEvent.getNewValue());
+
+        // Update value in the database.
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        boolean successful = accountDAO.updateAccountAddress(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
+
+        if (successful) {
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Account update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update account address.");
+            failed.show();
+        }
+    }
+
+    public void onEditUpdateAccountCity(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
+        // Update value of cell in TableView to new value entered by user.
+        Account accountName = tableAccount.getSelectionModel().getSelectedItem();
+        accountName.setCity(accountStringCellEditEvent.getNewValue());
+
+        // Update value in the database.
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        boolean successful = accountDAO.updateAccountCity(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
+
+        if (successful) {
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Account update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update account city.");
             failed.show();
         }
     }
