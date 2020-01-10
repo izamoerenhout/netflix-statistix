@@ -36,8 +36,6 @@ public class AccountsScreenController implements Initializable {
     public Button buttonAdd;
     public Button buttonBack;
 
-    private ObservableList<Account> list;
-
     public void returnToMainMenu() throws Exception {
         stage = Main.getPrimaryStage();
 
@@ -50,44 +48,21 @@ public class AccountsScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving accounts from the database...");
 
-        // Retrieve accounts from database and put them into the TableView.
-        populateTableView();
-    }
-
-    // Method responsible for populating TableView with records from our database.
-    private void populateTableView() {
-        // Instantiate list.
-        list = FXCollections.observableArrayList();
-
         // Make the name, address and city column editable.
         tableAccount.setEditable(true);
         col_name.setCellFactory(TextFieldTableCell.forTableColumn());
         col_address.setCellFactory(TextFieldTableCell.forTableColumn());
         col_city.setCellFactory(TextFieldTableCell.forTableColumn());
 
+        // Retrieve accounts from database and put them into the TableView.
+        populateTableView();
+    }
+
+    // Method responsible for populating TableView with records from our database.
+    private void populateTableView() {
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
+
         try {
-            // Connect to the database.
-            Connection con = new DatabaseConnector().getConnection();
-
-            // Form an SQL query.
-            String query = "SELECT * FROM Account";
-
-            // Create a statement that will be used to execute the query.
-            Statement statement = con.createStatement();
-
-            // Execute the query. The result of the query will be stored in this variable.
-            ResultSet resultSet = statement.executeQuery(query);
-
-            //Iterate through ResultSet, put data into new Account object and add to list.
-            while (resultSet.next()) {
-                int accountId = resultSet.getInt("AccountId");
-                String name = resultSet.getString("Name");
-                String address = resultSet.getString("Address");
-                String city = resultSet.getString("City");
-
-                list.add(new Account(accountId, name, address, city));
-            }
-
             // Set property to TableView columns.
             col_id.setCellValueFactory(new PropertyValueFactory<>("accountId"));
             col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -95,8 +70,7 @@ public class AccountsScreenController implements Initializable {
             col_city.setCellValueFactory(new PropertyValueFactory<>("city"));
 
             // Set data to TableView.
-            tableAccount.setItems(list);
-
+            tableAccount.setItems(accountDAO.getAllAccounts());
         } catch (Exception e) {
             e.printStackTrace();
         }
