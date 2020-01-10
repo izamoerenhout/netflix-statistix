@@ -17,15 +17,17 @@ public class ProfileDAO {
     }
 
     // Updates the id of an existing account in the database.
-    public boolean updateAccountId(int accountId) {
+    public boolean updateAccountId(int profileAccountId, String profileName) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
             String query = String.format("UPDATE Profile \n" +
-                            "SET AccountId = %d;",
-                    accountId);
+                            "SET AccountId = %d \n" +
+                            "WHERE ProfileName = '%s';",
+                    profileAccountId,
+                    profileName);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();

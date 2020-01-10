@@ -142,12 +142,12 @@ public class ProfilesScreenController implements Initializable {
 
     public void onEditUpdateId(TableColumn.CellEditEvent<Profile, Integer> profileIntegerCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
-        Profile id = tableProfile.getSelectionModel().getSelectedItem();
-        id.setId(profileIntegerCellEditEvent.getNewValue());
+        Profile profileAccountId = tableProfile.getSelectionModel().getSelectedItem();
+        profileAccountId.setId(profileIntegerCellEditEvent.getNewValue());
 
         // Update value in the database.
         ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
-        boolean successful = profileDAO.updateAccountId(profileIntegerCellEditEvent.getNewValue());
+        boolean successful = profileDAO.updateAccountId(profileIntegerCellEditEvent.getNewValue(), profileAccountId.getProfileName());
 
         if (successful){
             populateTableView();
