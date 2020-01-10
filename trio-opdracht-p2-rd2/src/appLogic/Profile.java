@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Profile {
 
-    private Integer id;
+    private int id;
+    private String accountName;
     private String profileName;
     private int age;
 
@@ -12,8 +13,9 @@ public class Profile {
 
     }
 
-    public Profile(int id, String profileName, int age) {
+    public Profile(int id, String accountName, String profileName, int age) {
         this.id = id;
+        this.accountName = accountName;
         this.profileName = profileName;
         this.age = age;
     }
@@ -42,5 +44,13 @@ public class Profile {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
     }
 }

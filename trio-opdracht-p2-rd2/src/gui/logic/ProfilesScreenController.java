@@ -30,8 +30,9 @@ public class ProfilesScreenController implements Initializable {
     public TextField ageInput;
     public TableView<Profile> tableProfile;
     public TableColumn<Profile, Integer> col_id;
+    public TableColumn<Profile, String> col_accountName;
     public TableColumn<Profile, String> col_profileName;
-    public TableColumn<Profile, String> col_age;
+    public TableColumn<Profile, Integer> col_age;
     public Button buttonAdd;
     public Button buttonBack;
 
@@ -63,7 +64,10 @@ public class ProfilesScreenController implements Initializable {
             Connection con = new DatabaseConnector().getConnection();
 
             // Form an SQL query.
-            String query = "SELECT * FROM Profile";
+            String query = "SELECT Profile.AccountId, Account.Name, Profile.ProfileName, Profile.Age \n" +
+                    "FROM Profile \n" +
+                    "JOIN Account \n" +
+                    "ON Account.AccountId = Profile.AccountId;";
 
             // Create a statement that will be used to execute the query.
             Statement statement = con.createStatement();
@@ -74,14 +78,16 @@ public class ProfilesScreenController implements Initializable {
             //Iterate through ResultSet, put data into new Profile object and add to list.
             while (resultSet.next()) {
                 int accountId = resultSet.getInt("AccountId");
+                String accountName = resultSet.getString("Name");
                 String profileName = resultSet.getString("ProfileName");
                 int age = resultSet.getInt("Age");
 
-                list.add(new Profile(accountId, profileName, age));
+                list.add(new Profile(accountId, accountName, profileName, age));
             }
 
             // Set property to TableView columns.
             col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+            col_accountName.setCellValueFactory(new PropertyValueFactory<>("accountName"));
             col_profileName.setCellValueFactory(new PropertyValueFactory<>("profileName"));
             col_age.setCellValueFactory(new PropertyValueFactory<>("age"));
 

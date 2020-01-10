@@ -299,47 +299,4 @@ public class AccountDAO {
             }
         }
     }
-
-    // Retrieves all profiles from the database.
-    public ArrayList<Profile> getAllProfiles() {
-        ArrayList<Profile> profileList = new ArrayList<>();
-
-        // Connect to the database.
-        Connection connection = databaseConnector.getConnection();
-
-        try {
-            // Form an SQL query.
-            String query = "SELECT Account.AccountId, Account.Name, Profile.Age \n" +
-                    "FROM Account \n" +
-                    "JOIN Profile \n" +
-                    "ON Account.AccountId = Profile.AccountId";
-
-            // Create a statement that will be used to execute the query.
-            Statement statement = connection.createStatement();
-
-            // Execute the query. The result of the query will be stored in this variable.
-            ResultSet resultSet = statement.executeQuery(query);
-
-            while (resultSet.next()) {
-                int accountId = resultSet.getInt("AccountId");
-                String name = resultSet.getString("Name");
-                int age = resultSet.getInt("Age");
-
-                profileList.add(new Profile(accountId, name, age));
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return profileList;
-    }
 }
