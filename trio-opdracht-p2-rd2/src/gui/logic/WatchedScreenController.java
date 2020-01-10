@@ -79,7 +79,7 @@ public class WatchedScreenController implements Initializable {
                 int programId = resultSet.getInt("ProgramId");
                 int perctWatched = resultSet.getInt("PerctWatched");
 
-                list.add(new Watched(accountId, profileName, programId, perctWatched));
+                list.add(new Watched(accountId, profileName, profileName, programId, profileName, perctWatched));
             }
 
             // Set property to TableView columns.
