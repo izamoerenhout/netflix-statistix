@@ -134,4 +134,46 @@ public class ProfilesScreenController implements Initializable {
             failed.show();
         }
     }
+
+    public void onEditUpdateProfileName(TableColumn.CellEditEvent<Profile, String> profileStringCellEditEvent) {
+        // Update value of cell in TableView to new value entered by user.
+        Profile profileName = tableProfile.getSelectionModel().getSelectedItem();
+        profileName.setProfileName(profileStringCellEditEvent.getNewValue());
+
+        // Update value in the database.
+        ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
+        boolean successful = profileDAO.updateProfileName(profileStringCellEditEvent.getNewValue(), profileName.getId(), profileName.getAge());
+
+        // Krijg alleen een fout melding als in Gerda of Lauran wil aanpassen, ik weet niet hoe ik dat moet verhelpen.
+
+        if (successful){
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Profile update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update profile name.");
+            failed.show();
+        }
+    }
+
+    public void onEditUpdateProfileAge(TableColumn.CellEditEvent<Profile, Integer> profileIntegerCellEditEvent) {
+        // Update value of cell in TableView to new value entered by user.
+        Profile profileAge = tableProfile.getSelectionModel().getSelectedItem();
+        profileAge.setAge(profileIntegerCellEditEvent.getNewValue());
+
+        // Update value in the database.
+        ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
+        boolean successful = profileDAO.updateProfileAge(profileIntegerCellEditEvent.getNewValue(), profileAge.getProfileName());
+
+        if (successful){
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Profile update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update profile account id.");
+            failed.show();
+        }
+    }
 }

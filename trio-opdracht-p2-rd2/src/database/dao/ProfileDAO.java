@@ -97,6 +97,75 @@ public class ProfileDAO {
         }
     }
 
+    // Updates the id of an existing account in the database.
+    public boolean updateProfileName(String profileName, int id, int age) {
+        // Connect to the database.
+        Connection connection = databaseConnector.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = String.format("UPDATE Profile \n" +
+                            "SET ProfileName = '%s' \n" +
+                            "WHERE AccountId = %d AND Age = %d;",
+                    profileName,
+                    id,
+                    age);
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the update.
+            statement.executeUpdate(query);
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    // Updates the id of an existing account in the database.
+    public boolean updateProfileAge(int profileAge, String profileName) {
+        // Connect to the database.
+        Connection connection = databaseConnector.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = String.format("UPDATE Profile \n" +
+                            "SET Age = %d \n" +
+                            "WHERE ProfileName = '%s';",
+                    profileAge,
+                    profileName);
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the update.
+            statement.executeUpdate(query);
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
     // Inserts a new profile into the database.
     public boolean insertProfile(int id, String profileName, int age) {
         // Connect to the database.

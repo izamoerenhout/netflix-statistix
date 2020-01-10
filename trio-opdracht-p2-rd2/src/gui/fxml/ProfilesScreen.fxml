@@ -14,8 +14,8 @@
             <columns>
                 <TableColumn fx:id="col_id" onEditCommit="#onEditUpdateId" prefWidth="98.0" text="AccountId" />
                 <TableColumn fx:id="col_accountName" prefWidth="206.0" text="AccountName" />
-                <TableColumn fx:id="col_profileName" prefWidth="171.0" text="ProfileName" />
-                <TableColumn fx:id="col_age" prefWidth="93.0" text="Age" />
+                <TableColumn fx:id="col_profileName" onEditCommit="#onEditUpdateProfileName" prefWidth="171.0" text="ProfileName" />
+                <TableColumn fx:id="col_age" onEditCommit="#onEditUpdateProfileAge" prefWidth="93.0" text="Age" />
             </columns>
         </TableView>
         <HBox layoutY="351.0" prefHeight="49.0" prefWidth="600.0" spacing="10.0" AnchorPane.topAnchor="350.0">
