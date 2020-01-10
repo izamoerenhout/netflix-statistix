@@ -2,24 +2,22 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.MainMenuController">
+<VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.MainMenuController">
    <children>
-   
-                   <Label prefHeight="35.0" prefWidth="174.0" text="Select an option" textAlignment="CENTER">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
+      <ImageView fitHeight="110.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../netflix-statistix-logo.png" />
+         </image></ImageView>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
          <children>
              <Button fx:id="buttonAccounts" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#showAccountsScreen" text="Accounts" />
             <Button fx:id="buttonProfiles" mnemonicParsing="false" onAction="#showProfilesScreen" text="Profiles" />
-            <Button fx:id="buttonWatched" alignment="CENTER" onAction="#showWatchedScreen" contentDisplay="CENTER" mnemonicParsing="false" text="Watched" />
+            <Button fx:id="buttonWatched" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showWatchedScreen" text="Watched" />
          </children>
       </HBox>
    </children>

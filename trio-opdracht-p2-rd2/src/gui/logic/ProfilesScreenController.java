@@ -2,6 +2,7 @@ package gui.logic;
 
 import appLogic.Profile;
 import database.DatabaseConnector;
+import database.dao.AccountDAO;
 import database.dao.ProfileDAO;
 import gui.Main;
 import javafx.collections.FXCollections;
@@ -62,37 +63,11 @@ public class ProfilesScreenController implements Initializable {
         populateTableView();
     }
 
-    // Method responsible for populating TableView with records from our database.
+    // Calls the getAllProfiles method from ProfileDAO and populates the TableView.
     private void populateTableView() {
-        // Instantiate list.
-        list = FXCollections.observableArrayList();
+        ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
 
         try {
-            // Connect to the database.
-            Connection con = new DatabaseConnector().getConnection();
-
-            // Form an SQL query.
-            String query = "SELECT Profile.AccountId, Account.Name, Profile.ProfileName, Profile.Age \n" +
-                    "FROM Profile \n" +
-                    "JOIN Account \n" +
-                    "ON Account.AccountId = Profile.AccountId;";
-
-            // Create a statement that will be used to execute the query.
-            Statement statement = con.createStatement();
-
-            // Execute the query. The result of the query will be stored in this variable.
-            ResultSet resultSet = statement.executeQuery(query);
-
-            //Iterate through ResultSet, put data into new Profile object and add to list.
-            while (resultSet.next()) {
-                int accountId = resultSet.getInt("AccountId");
-                String accountName = resultSet.getString("Name");
-                String profileName = resultSet.getString("ProfileName");
-                int age = resultSet.getInt("Age");
-
-                list.add(new Profile(accountId, accountName, profileName, age));
-            }
-
             // Set property to TableView columns.
             col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
             col_accountName.setCellValueFactory(new PropertyValueFactory<>("accountName"));
@@ -100,7 +75,7 @@ public class ProfilesScreenController implements Initializable {
             col_age.setCellValueFactory(new PropertyValueFactory<>("age"));
 
             // Set data to TableView.
-            tableProfile.setItems(list);
+            tableProfile.setItems(profileDAO.getAllProfiles());
 
         } catch (Exception e) {
             e.printStackTrace();

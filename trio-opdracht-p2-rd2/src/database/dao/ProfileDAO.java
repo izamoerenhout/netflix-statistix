@@ -1,12 +1,14 @@
 package database.dao;
 
+import appLogic.Account;
 import appLogic.Profile;
 import database.DatabaseConnector;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 public class ProfileDAO {
 
@@ -14,6 +16,51 @@ public class ProfileDAO {
 
     public ProfileDAO(DatabaseConnector databaseConnector) {
         this.databaseConnector = databaseConnector;
+    }
+
+    // Retrieves all profiles from the database.
+    public ObservableList<Profile> getAllProfiles() {
+        // Instantiate profileList.
+        ObservableList<Profile> profileList = FXCollections.observableArrayList();
+
+        // Connect to the database.
+        Connection connection = databaseConnector.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = "SELECT Profile.AccountId, Account.Name, Profile.ProfileName, Profile.Age \n" +
+                    "FROM Profile \n" +
+                    "JOIN Account \n" +
+                    "ON Account.AccountId = Profile.AccountId;";
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the query. The result of the query will be stored in this variable.
+            ResultSet resultSet = statement.executeQuery(query);
+
+            //Iterate through ResultSet, put data into new Profile object and add to list.
+            while (resultSet.next()) {
+                int accountId = resultSet.getInt("AccountId");
+                String accountName = resultSet.getString("Name");
+                String profileName = resultSet.getString("ProfileName");
+                int age = resultSet.getInt("Age");
+
+                profileList.add(new Profile(accountId, accountName, profileName, age));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return profileList;
     }
 
     // Updates the id of an existing account in the database.
