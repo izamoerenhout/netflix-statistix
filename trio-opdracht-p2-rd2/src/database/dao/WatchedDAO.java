@@ -1,30 +1,31 @@
-package database;
+package database.dao;
 
-import appLogic.Profile;
+import appLogic.Watched;
+import database.DatabaseConnector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class ProfileDAO {
+public class WatchedDAO {
 
-    private DatabaseConnection databaseConnection;
+    private DatabaseConnector databaseConnector;
 
-    public ProfileDAO(DatabaseConnection databaseConnection) {
-        this.databaseConnection = databaseConnection;
+    public WatchedDAO(DatabaseConnector databaseConnector) {
+        this.databaseConnector = databaseConnector;
     }
 
-    // Retrieves all profiles from a specific account.
-    public ArrayList<Profile> getAccountProfiles(int id) {
-        ArrayList<Profile> profileList = new ArrayList<>();
+    public ArrayList<Watched> getAllWatchedProgramsOfProfile(int accId, String name) {
+        ArrayList<Watched> watchedProgramsList = new ArrayList<>();
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
+
             // Form an SQL query.
-            String query = "SELECT * FROM Profile WHERE accountId = " + id;
+            String query = "SELECT * FROM Watched WHERE AccountId = " + accId + " AND ProfileName = '" + name + "'";
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -35,11 +36,12 @@ public class ProfileDAO {
             while (resultSet.next()) {
                 int accountId = resultSet.getInt("AccountId");
                 String profileName = resultSet.getString("ProfileName");
-                int age = resultSet.getInt("Age");
+                int programId = resultSet.getInt("ProgramId");
+                int perctWatched = resultSet.getInt("PerctWatched");
 
-                profileList.add(new Profile(accountId, profileName, age));
+                watchedProgramsList.add(new Watched(accountId, profileName, programId, perctWatched));
+
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -52,20 +54,21 @@ public class ProfileDAO {
             }
         }
 
-        return profileList;
+        return watchedProgramsList;
     }
 
-    // Updates an existing profile in the database.
-    public boolean updateProfile(String profileName, int age, int id) {
+    // Updates an existing watched program in the database.
+    public boolean updateWatched(int perctWatched, int accId, String name, int progId) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Profile SET ProfileName = '%s', Age = '%d' WHERE AccountId = %d",
-                    profileName,
-                    age,
-                    id);
+            String query = String.format("UPDATE Watched SET PerctWatched = %d WHERE AccountId = %d AND ProfileName = '%s' AND ProgramId = %d",
+                    perctWatched,
+                    accId,
+                    name,
+                    progId);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -89,17 +92,18 @@ public class ProfileDAO {
         }
     }
 
-    // Inserts a new profile into the database.
-    public boolean insertProfile(int id, String profileName, int age) {
+    // Inserts a new watched program into the database.
+    public boolean insertWatched(int accountId, String profileName, int programId, int perctWatched) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("INSERT INTO Profile (AccountId, ProfileName, Age) VALUES('%d', '%s', '%d');",
-                    id,
+            String query = String.format("INSERT INTO Watched (AccountId, ProfileName, ProgramId, PerctWatched) VALUES('%d', '%s', '%d', '%d')",
+                    accountId,
                     profileName,
-                    age);
+                    programId,
+                    perctWatched);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -123,14 +127,17 @@ public class ProfileDAO {
         }
     }
 
-    // Deletes a profile from the database.
-    public boolean deleteProfile(int id, String profileName) {
+    // Deletes a watched program from the database.
+    public boolean deleteWatched(int accountId, String profileName, int programId) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = "DELETE FROM Profile WHERE AccountId = " + id + " AND ProfileName = '" + profileName + "'";
+            String query = String.format("DELETE FROM Watched WHERE AccountId = %d AND ProfileName = '%s' AND ProgramId = %d",
+                    accountId,
+                    profileName,
+                    programId);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();

@@ -1,8 +1,8 @@
 package gui.logic;
 
 import appLogic.Watched;
-import database.DatabaseConnection;
-import database.WatchedDAO;
+import database.DatabaseConnector;
+import database.dao.WatchedDAO;
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -62,14 +61,13 @@ public class WatchedScreenController implements Initializable {
 
         try {
             // Connect to the database.
-//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
+            Connection con = new DatabaseConnector().getConnection();
 
             // Form an SQL query.
             String query = "SELECT * FROM Watched";
 
             // Create a statement that will be used to execute the query.
-            Statement statement = connection.createStatement();
+            Statement statement = con.createStatement();
 
             // Execute the query. The result of the query will be stored in this variable.
             ResultSet resultSet = statement.executeQuery(query);
@@ -100,7 +98,7 @@ public class WatchedScreenController implements Initializable {
 
     // Calls the insertWatched method from WatchedDAO and adds a new watched program into the database.
     public void addWatched() {
-        WatchedDAO watched = new WatchedDAO(new DatabaseConnection());
+        WatchedDAO watched = new WatchedDAO(new DatabaseConnector());
 
         // Convert the user input in the fields "Account id", "Program id" and "Perct watched" to an int
         // in order to store them into a new Watched object.

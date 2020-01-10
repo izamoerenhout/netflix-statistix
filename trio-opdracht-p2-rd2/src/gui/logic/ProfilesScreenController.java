@@ -1,8 +1,8 @@
 package gui.logic;
 
 import appLogic.Profile;
-import database.DatabaseConnection;
-import database.ProfileDAO;
+import database.DatabaseConnector;
+import database.dao.ProfileDAO;
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -60,14 +60,13 @@ public class ProfilesScreenController implements Initializable {
 
         try {
             // Connect to the database.
-//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
+            Connection con = new DatabaseConnector().getConnection();
 
             // Form an SQL query.
             String query = "SELECT * FROM Profile";
 
             // Create a statement that will be used to execute the query.
-            Statement statement = connection.createStatement();
+            Statement statement = con.createStatement();
 
             // Execute the query. The result of the query will be stored in this variable.
             ResultSet resultSet = statement.executeQuery(query);
@@ -96,7 +95,7 @@ public class ProfilesScreenController implements Initializable {
 
     // Calls the insertProfile method from ProfileDAO and adds a new profile into the database.
     public void addProfile() {
-        ProfileDAO profile = new ProfileDAO(new DatabaseConnection());
+        ProfileDAO profile = new ProfileDAO(new DatabaseConnector());
 
         // Convert the user input in the fields "Account Id" and "Age" to an int
         // in order to store them into a new Profile object.

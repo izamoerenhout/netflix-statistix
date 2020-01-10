@@ -1,6 +1,7 @@
-package database;
+package database.dao;
 
 import appLogic.Episode;
+import database.DatabaseConnector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,10 +11,10 @@ import java.util.Set;
 
 public class EpisodeDAO {
 
-    private DatabaseConnection databaseConnection;
+    private DatabaseConnector databaseConnector;
 
-    public EpisodeDAO(DatabaseConnection databaseConnection) {
-        this.databaseConnection = databaseConnection;
+    public EpisodeDAO(DatabaseConnector databaseConnector) {
+        this.databaseConnector = databaseConnector;
     }
 
     // Retrieves all episodes from the database.
@@ -21,7 +22,7 @@ public class EpisodeDAO {
         Set<Episode> episodeList = new HashSet<>();
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form a query.

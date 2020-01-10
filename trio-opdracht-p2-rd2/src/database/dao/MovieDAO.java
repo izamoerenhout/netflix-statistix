@@ -1,6 +1,7 @@
-package database;
+package database.dao;
 
 import appLogic.Movie;
+import database.DatabaseConnector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,10 +11,10 @@ import java.util.Set;
 
 public class MovieDAO {
 
-    private DatabaseConnection databaseConnection;
+    private DatabaseConnector databaseConnector;
 
-    public MovieDAO(DatabaseConnection databaseConnection) {
-        this.databaseConnection = databaseConnection;
+    public MovieDAO(DatabaseConnector databaseConnector) {
+        this.databaseConnector = databaseConnector;
     }
 
     // Retrieves all movies from the database.
@@ -21,7 +22,7 @@ public class MovieDAO {
         Set<Movie> movieList = new HashSet<>();
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form a query.

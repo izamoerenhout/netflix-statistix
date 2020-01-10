@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.AccountsScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.AccountsScreenController">
    <children>
-      <TableView fx:id="tableAccount" layoutX="10.0" layoutY="10.0" prefHeight="329.0" prefWidth="630.0">
+      <TableView fx:id="tableAccount" layoutX="10.0" layoutY="10.0" prefHeight="341.0" prefWidth="580.0">
         <columns>
           <TableColumn fx:id="col_id" prefWidth="75.0" text="AccountId" />
           <TableColumn fx:id="col_name" onEditCommit="#onEditUpdateAccountName" prefWidth="160.0" text="Name" />
             <TableColumn fx:id="col_address" onEditCommit="#onEditUpdateAccountAddress" prefWidth="232.0" text="Address" />
-            <TableColumn fx:id="col_city" onEditCommit="#onEditUpdateAccountCity" prefWidth="150.0" text="City" />
+            <TableColumn fx:id="col_city" onEditCommit="#onEditUpdateAccountCity" prefWidth="97.0" text="City" />
         </columns>
       </TableView>
-      <HBox prefHeight="50.0" prefWidth="650.0" spacing="10.0" AnchorPane.topAnchor="350.0">
+      <HBox prefHeight="50.0" prefWidth="600.0" spacing="10.0" AnchorPane.topAnchor="350.0">
          <children>
             <TextField fx:id="nameInput" prefHeight="31.0" promptText="Name" />
             <TextField fx:id="addressInput" prefHeight="31.0" promptText="Address" />

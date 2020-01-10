@@ -1,7 +1,8 @@
-package database;
+package database.dao;
 
 import appLogic.Account;
 import appLogic.Profile;
+import database.DatabaseConnector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 
 public class AccountDAO {
 
-    private DatabaseConnection databaseConnection;
+    private DatabaseConnector databaseConnector;
 
-    public AccountDAO(DatabaseConnection databaseConnection) {
-        this.databaseConnection = databaseConnection;
+    public AccountDAO(DatabaseConnector databaseConnector) {
+        this.databaseConnector = databaseConnector;
     }
 
     // Retrieves a single account from the database.
@@ -21,7 +22,7 @@ public class AccountDAO {
         Account account = null;
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
 
@@ -63,7 +64,7 @@ public class AccountDAO {
         ArrayList<Account> accountList = new ArrayList<>();
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
 
@@ -103,7 +104,7 @@ public class AccountDAO {
     // Updates the name of an existing account in the database.
     public boolean updateAccount(String name, String address, String city, int id) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
@@ -138,7 +139,7 @@ public class AccountDAO {
     // Updates the name of an existing account in the database.
     public boolean updateAccountName(String name, int id) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
@@ -171,7 +172,7 @@ public class AccountDAO {
     // Updates the address of an existing account in the database.
     public boolean updateAccountAddress(String address, int id) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
@@ -204,7 +205,7 @@ public class AccountDAO {
     // Updates the name of an existing account in the database.
     public boolean updateAccountCity(String city, int id) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
@@ -237,7 +238,7 @@ public class AccountDAO {
     // Inserts a new account into the database.
     public boolean insertAccount(String name, String address, String city) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
@@ -271,7 +272,7 @@ public class AccountDAO {
     // Deletes an account from the database.
     public boolean deleteAccount(int id) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
@@ -304,7 +305,7 @@ public class AccountDAO {
         ArrayList<Profile> profileList = new ArrayList<>();
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.

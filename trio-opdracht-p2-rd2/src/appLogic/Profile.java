@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 public class Profile {
 
-    private int id;
+    private Integer id;
     private String profileName;
     private int age;
+
+    public Profile() {
+
+    }
 
     public Profile(int id, String profileName, int age) {
         this.id = id;

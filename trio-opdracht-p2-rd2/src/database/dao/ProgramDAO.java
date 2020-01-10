@@ -1,8 +1,9 @@
-package database;
+package database.dao;
 
 import appLogic.Episode;
 import appLogic.Movie;
 import appLogic.Program;
+import database.DatabaseConnector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,16 +11,16 @@ import java.sql.Statement;
 
 public class ProgramDAO {
 
-    private DatabaseConnection databaseConnection;
+    private DatabaseConnector databaseConnector;
 
-    public ProgramDAO(DatabaseConnection databaseConnection) {
-        this.databaseConnection = databaseConnection;
+    public ProgramDAO(DatabaseConnector databaseConnector) {
+        this.databaseConnector = databaseConnector;
     }
 
     // Retrieves a program from the database
     public Program getProgramById(int id) {
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         Program program = null;
 

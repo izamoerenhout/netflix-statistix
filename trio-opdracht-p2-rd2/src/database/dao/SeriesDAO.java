@@ -1,6 +1,7 @@
-package database;
+package database.dao;
 
 import appLogic.Series;
+import database.DatabaseConnector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,10 +11,10 @@ import java.util.Set;
 
 public class SeriesDAO {
 
-    private DatabaseConnection databaseConnection;
+    private DatabaseConnector databaseConnector;
 
-    public SeriesDAO(DatabaseConnection databaseConnection) {
-        this.databaseConnection = databaseConnection;
+    public SeriesDAO(DatabaseConnector databaseConnector) {
+        this.databaseConnector = databaseConnector;
     }
 
     // Retrieves a series from the database.
@@ -21,7 +22,7 @@ public class SeriesDAO {
         Series series = null;
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
 
@@ -62,7 +63,7 @@ public class SeriesDAO {
         Set<Series> seriesList = new HashSet<>();
 
         // Connect to the database.
-        Connection connection = databaseConnection.getConnection();
+        Connection connection = databaseConnector.getConnection();
 
         try {
             // Form a query.

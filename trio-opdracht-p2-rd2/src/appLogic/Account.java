@@ -7,6 +7,10 @@ public class Account {
     private String address;
     private String city;
 
+    public Account() {
+
+    }
+
     public Account(int accountId, String name, String address, String city) {
         this.accountId = accountId;
         this.name = name;

@@ -1,8 +1,8 @@
 package gui.logic;
 
 import appLogic.Account;
-import database.AccountDAO;
-import database.DatabaseConnection;
+import database.dao.AccountDAO;
+import database.DatabaseConnector;
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -68,14 +67,13 @@ public class AccountsScreenController implements Initializable {
 
         try {
             // Connect to the database.
-//            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;");
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;");
+            Connection con = new DatabaseConnector().getConnection();
 
             // Form an SQL query.
             String query = "SELECT * FROM Account";
 
             // Create a statement that will be used to execute the query.
-            Statement statement = connection.createStatement();
+            Statement statement = con.createStatement();
 
             // Execute the query. The result of the query will be stored in this variable.
             ResultSet resultSet = statement.executeQuery(query);
@@ -106,7 +104,7 @@ public class AccountsScreenController implements Initializable {
 
     // Calls the insertAccount method from AccountDAO and adds a new account into the database.
     public void addAccount() {
-        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
         boolean successful = accountDAO.insertAccount(nameInput.getText(), addressInput.getText(), cityInput.getText());
 
         if (successful) {
@@ -137,7 +135,7 @@ public class AccountsScreenController implements Initializable {
         accountName.setName(accountStringCellEditEvent.getNewValue());
 
         // Update value in the database.
-        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
         boolean successful = accountDAO.updateAccountName(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
 
         if (successful) {
@@ -157,7 +155,7 @@ public class AccountsScreenController implements Initializable {
         accountName.setAddress(accountStringCellEditEvent.getNewValue());
 
         // Update value in the database.
-        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
         boolean successful = accountDAO.updateAccountAddress(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
 
         if (successful) {
@@ -177,7 +175,7 @@ public class AccountsScreenController implements Initializable {
         accountName.setCity(accountStringCellEditEvent.getNewValue());
 
         // Update value in the database.
-        AccountDAO accountDAO = new AccountDAO(new DatabaseConnection());
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
         boolean successful = accountDAO.updateAccountCity(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
 
         if (successful) {
