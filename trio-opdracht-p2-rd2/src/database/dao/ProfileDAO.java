@@ -16,17 +16,16 @@ public class ProfileDAO {
         this.databaseConnector = databaseConnector;
     }
 
-    // Updates an existing profile in the database.
-    public boolean updateProfile(String profileName, int age, int id) {
+    // Updates the id of an existing account in the database.
+    public boolean updateAccountId(int accountId) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Profile SET ProfileName = '%s', Age = '%d' WHERE AccountId = %d",
-                    profileName,
-                    age,
-                    id);
+            String query = String.format("UPDATE Profile \n" +
+                            "SET AccountId = %d;",
+                    accountId);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -35,7 +34,6 @@ public class ProfileDAO {
             statement.executeUpdate(query);
 
             return true;
-
         } catch (Exception e) {
             e.printStackTrace();
             return false;

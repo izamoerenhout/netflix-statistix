@@ -12,7 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -49,6 +51,12 @@ public class ProfilesScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving profiles from the database...");
+
+        // Make the id, profileName and age column editable.
+        tableProfile.setEditable(true);
+        col_id.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        col_profileName.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_age.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
         // Retrieve profiles from database and put them into the TableView.
         populateTableView();
@@ -117,11 +125,37 @@ public class ProfilesScreenController implements Initializable {
             success.setContentText("Profile has been added successfully.");
             success.show();
             populateTableView();
+            idInput.clear();
+            profileNameInput.clear();
+            ageInput.clear();
         } else {
             Alert failed = new Alert(Alert.AlertType.WARNING);
             failed.setTitle("Profile creation failed");
             failed.setHeaderText(null);
             failed.setContentText("Failed to add profile");
+            failed.show();
+            idInput.clear();
+            profileNameInput.clear();
+            ageInput.clear();
+        }
+    }
+
+    public void onEditUpdateId(TableColumn.CellEditEvent<Profile, Integer> profileIntegerCellEditEvent) {
+        // Update value of cell in TableView to new value entered by user.
+        Profile id = tableProfile.getSelectionModel().getSelectedItem();
+        id.setId(profileIntegerCellEditEvent.getNewValue());
+
+        // Update value in the database.
+        ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
+        boolean successful = profileDAO.updateAccountId(profileIntegerCellEditEvent.getNewValue());
+
+        if (successful){
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Profile update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update profile account id.");
             failed.show();
         }
     }
