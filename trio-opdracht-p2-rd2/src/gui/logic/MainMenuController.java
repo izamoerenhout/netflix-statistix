@@ -7,13 +7,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/** Controller for the main menu screen */
 public class MainMenuController {
-
     public Button buttonAccounts;
     public Button buttonProfiles;
     public Button buttonWatched;
     private Stage stage;
 
+    /** Shows the Accounts screen. */
     public void showAccountsScreen() throws Exception {
         stage = Main.getPrimaryStage();
 
@@ -22,6 +23,7 @@ public class MainMenuController {
         stage.setScene(new Scene(root));
     }
 
+    /** Shows the Profiles screen. */
     public void showProfilesScreen() throws Exception {
         stage = Main.getPrimaryStage();
 
@@ -31,6 +33,7 @@ public class MainMenuController {
 
     }
 
+    /** Shows the Watched Programs screen. */
     public void showWatchedProgramsScreen() throws Exception {
         stage = Main.getPrimaryStage();
 

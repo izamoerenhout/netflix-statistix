@@ -1,5 +1,6 @@
 package appLogic;
 
+/** Model Object for the Accounts screen. */
 public class Watched_Program {
     private String email;
     private String accountName;
@@ -7,6 +8,14 @@ public class Watched_Program {
     private int programId;
     private int pctWatched;
 
+    /** Class constructor.
+     *
+     * @param email The user's registered email address.
+     * @param accountName The user's full account name.
+     * @param profileName The profile the program was watched on.
+     * @param programId The id of the program that was watched.
+     * @param pctWatched The percentage the user has watched.
+     */
     public Watched_Program(String email, String accountName, String profileName, int programId, int pctWatched) {
         this.email = email;
         this.accountName = accountName;
@@ -15,8 +24,7 @@ public class Watched_Program {
         this.pctWatched = pctWatched;
     }
 
-    // Every class atrribute has its own getter and setter.
-
+    /** Getters and setters. */
     public String getEmail() {
         return email;
     }

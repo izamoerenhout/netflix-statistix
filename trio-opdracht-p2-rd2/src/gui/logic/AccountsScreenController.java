@@ -4,6 +4,7 @@ import appLogic.Account;
 import database.dao.AccountDAO;
 import database.DatabaseConnector;
 import gui.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/** Controller for the Accounts screen */
 public class AccountsScreenController implements Initializable {
 
     public Stage stage;
@@ -24,14 +26,17 @@ public class AccountsScreenController implements Initializable {
     public TextField nameInput;
     public TextField addressInput;
     public TextField cityInput;
+
     public TableView<Account> tableAccount;
     public TableColumn<Account, String> col_email;
     public TableColumn<Account, String> col_name;
     public TableColumn<Account, String> col_address;
     public TableColumn<Account, String> col_city;
+
     public Button buttonAdd;
     public Button buttonBack;
 
+    /** Returns to the Main Menu screen */
     public void returnToMainMenu() throws Exception {
         stage = Main.getPrimaryStage();
 
@@ -40,6 +45,9 @@ public class AccountsScreenController implements Initializable {
         stage.setScene(new Scene(root));
     }
 
+    /** Gets called when the Accounts screen is opened. Prints a line of text, makes the Name, Address and City
+     *      cells editable and populates the TableView.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving accounts from the database...");
@@ -54,12 +62,12 @@ public class AccountsScreenController implements Initializable {
         populateTableView();
     }
 
-    // Method responsible for populating TableView with records from our database.
+    /** Method responsible for populating TableView with records from our database. */
     private void populateTableView() {
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
 
         try {
-            // Set property to TableView columns.
+            // Set attributes to TableView columns.
             col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
             col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
             col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -72,7 +80,7 @@ public class AccountsScreenController implements Initializable {
         }
     }
 
-    // Calls the insertAccount method from AccountDAO and adds a new account into the database.
+    /** Calls insertAccount from AccountDAO and adds a new account into the database. */
     public void addAccount() {
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
         boolean successful = accountDAO.insertAccount(emailInput.getText(), nameInput.getText(), addressInput.getText(), cityInput.getText());
@@ -101,6 +109,7 @@ public class AccountsScreenController implements Initializable {
         }
     }
 
+    /** Calls updateAccountName from AccountDAO and updates the name of an existing account in the database. */
     public void onEditUpdateAccountName(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
         Account account = tableAccount.getSelectionModel().getSelectedItem();
@@ -121,6 +130,7 @@ public class AccountsScreenController implements Initializable {
         }
     }
 
+    /** Calls updateAccountAddress from AccountDAO and updates the address of an existing account in the database. */
     public void onEditUpdateAccountAddress(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
         Account account = tableAccount.getSelectionModel().getSelectedItem();
@@ -141,6 +151,7 @@ public class AccountsScreenController implements Initializable {
         }
     }
 
+    /** Calls updateAccountCity from AccountDAO and updates the city of an existing account in the database. */
     public void onEditUpdateAccountCity(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
         Account account = tableAccount.getSelectionModel().getSelectedItem();
@@ -157,6 +168,28 @@ public class AccountsScreenController implements Initializable {
             failed.setTitle("Account update failed");
             failed.setHeaderText(null);
             failed.setContentText("Failed to update account city.");
+            failed.show();
+        }
+    }
+
+    public void deleteAccount() {
+        Account account = tableAccount.getSelectionModel().getSelectedItem();
+
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
+        boolean successful = accountDAO.deleteAccount(account.getEmail());
+
+        if (successful) {
+            Alert success = new Alert(Alert.AlertType.INFORMATION);
+            success.setTitle("Account deletion success");
+            success.setHeaderText(null);
+            success.setContentText("Account has been deleted successfully.");
+            success.show();
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Account deletion failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to delete account.");
             failed.show();
         }
     }
