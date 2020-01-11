@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03cb7c7f-8d90-48fc-8244-5d61ee7c44c5" name="Default Changelist" comment="" />
+    <list default="true" id="03cb7c7f-8d90-48fc-8244-5d61ee7c44c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/fxml/WatchedScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/fxml/WatchedProgramsScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/logic/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/logic/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/logic/WatchedScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/logic/WatchedProgramsScreenController.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,88 +18,54 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/logic/AccountsScreenController.java">
+        <entry file="file://$PROJECT_DIR$/src/gui/fxml/MainMenu.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="77" column="75" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="75" />
+            <state relative-caret-position="283">
+              <caret line="23" column="145" selection-start-line="23" selection-start-column="145" selection-end-line="23" selection-end-column="145" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/dao/AccountDAO.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/logic/MainMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3300">
-              <caret line="159" column="3" selection-start-line="159" selection-start-column="3" selection-end-line="159" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/fxml/WatchedScreen.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/dao/ProfileDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/dao/WatchedDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1166">
-              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/logic/WatchedScreenController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1672">
-              <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+            <state relative-caret-position="241">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+            <state relative-caret-position="330">
+              <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/appLogic/Watched_Program.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/fxml/WatchedProgramsScreen.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -124,7 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Backend/Program.java" />
         <option value="$PROJECT_DIR$/src/Backend/Episode.java" />
         <option value="$PROJECT_DIR$/src/Backend/Series.java" />
         <option value="$PROJECT_DIR$/src/Backend/Movie.java" />
@@ -156,29 +129,30 @@
         <option value="$PROJECT_DIR$/src/gui/ProfilesScreenController.java" />
         <option value="$PROJECT_DIR$/src/gui/WatchedScreen.fxml" />
         <option value="$PROJECT_DIR$/src/gui/WatchedScreenController.java" />
-        <option value="$PROJECT_DIR$/src/gui/logic/MainMenuController.java" />
         <option value="$PROJECT_DIR$/src/database/DatabaseConnection.java" />
         <option value="$PROJECT_DIR$/src/database/AccountDAO.java" />
         <option value="$PROJECT_DIR$/src/appLogic/DisplayProfile.java" />
-        <option value="$PROJECT_DIR$/src/gui/fxml/MainMenu.fxml" />
         <option value="$PROJECT_DIR$/src/database/DatabaseConnector.java" />
         <option value="$PROJECT_DIR$/src/appLogic/Account.java" />
         <option value="$PROJECT_DIR$/src/appLogic/Watched.java" />
         <option value="$PROJECT_DIR$/src/appLogic/Profile.java" />
         <option value="$PROJECT_DIR$/src/database/dao/WatchedDAO.java" />
         <option value="$PROJECT_DIR$/src/gui/logic/ProfilesScreenController.java" />
-        <option value="$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml" />
         <option value="$PROJECT_DIR$/src/gui/logic/WatchedScreenController.java" />
         <option value="$PROJECT_DIR$/src/database/dao/ProfileDAO.java" />
         <option value="$PROJECT_DIR$/src/appLogic/Watched_Program.java" />
-        <option value="$PROJECT_DIR$/src/gui/fxml/WatchedScreen.fxml" />
         <option value="$PROJECT_DIR$/src/database/dao/AccountDAO.java" />
-        <option value="$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml" />
         <option value="$PROJECT_DIR$/src/gui/logic/AccountsScreenController.java" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/WatchedScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/logic/MainMenuController.java" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/WatchedProgramsScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/fxml/MainMenu.fxml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-195" />
     <option name="y" value="180" />
     <option name="width" value="1940" />
@@ -192,12 +166,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="trio-opdracht-p2-rd2" type="b2602c69:ProjectViewProjectNode" />
               <item name="trio-opdracht-p2-rd2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trio-opdracht-p2-rd2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trio-opdracht-p2-rd2" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trio-opdracht-p2-rd2" type="b2602c69:ProjectViewProjectNode" />
@@ -248,11 +228,10 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578703795814" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578738550590" />
     <property name="last_opened_file_path" value="C:/Program Files/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -508,8 +487,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21428572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2185501" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -518,7 +498,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -618,13 +598,6 @@
     <entry file="jar://$PATH_TO_FX$/javafx.controls.jar!/javafx/scene/control/ButtonBase.class" />
     <entry file="jar://C:/Program Files/Java/javafx-sdk-11.0.2/lib/javafx.fxml.jar!/javafx/fxml/FXMLLoader.class" />
     <entry file="file://$PROJECT_DIR$/src/Test/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/gui/logic/MainMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -640,14 +613,6 @@
     <entry file="file://$PROJECT_DIR$/src/database/dao/ProgramDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/database/dao/SeriesDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/appLogic/DisplayProfile.java" />
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/MainMenu.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/appLogic/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -700,14 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/logic/ProfilesScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1210">
@@ -732,14 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/WatchedScreen.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/dao/ProfileDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -760,18 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/logic/WatchedScreenController.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/logic/WatchedProgramsScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1672">
           <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -779,6 +720,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/ProfilesScreen.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/AccountsScreen.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/WatchedProgramsScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/fxml/MainMenu.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="23" column="145" selection-start-line="23" selection-start-column="145" selection-end-line="23" selection-end-column="145" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/logic/MainMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
         </state>
       </provider>
     </entry>

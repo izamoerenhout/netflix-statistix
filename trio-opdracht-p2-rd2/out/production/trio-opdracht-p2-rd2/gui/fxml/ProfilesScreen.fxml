@@ -13,10 +13,10 @@
     <children>
         <TableView fx:id="tableProfile" layoutX="10.0" layoutY="10.0" prefHeight="340.0" prefWidth="580.0">
             <columns>
-                <TableColumn fx:id="col_email" onEditCommit="#onEditUpdateEmail" prefWidth="98.0" text="Email" />
-                <TableColumn fx:id="col_accountName" prefWidth="206.0" text="Account name" />
-                <TableColumn fx:id="col_profileName" onEditCommit="#onEditUpdateProfileName" prefWidth="171.0" text="Profile name" />
-                <TableColumn fx:id="col_age" onEditCommit="#onEditUpdateProfileAge" prefWidth="93.0" text="Age" />
+                <TableColumn fx:id="col_email" onEditCommit="#onEditUpdateEmail" prefWidth="173.0" text="Email" />
+                <TableColumn fx:id="col_accountName" prefWidth="182.0" text="Account name" />
+                <TableColumn fx:id="col_profileName" onEditCommit="#onEditUpdateProfileName" prefWidth="149.0" text="Profile name" />
+                <TableColumn fx:id="col_age" onEditCommit="#onEditUpdateProfileAge" prefWidth="66.0" text="Age" />
             </columns>
         </TableView>
         <HBox layoutY="351.0" prefHeight="49.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: rgb(86,77,77);" AnchorPane.topAnchor="350.0">
@@ -24,7 +24,7 @@
                 <TextField fx:id="emailInput" prefHeight="31.0" promptText="Email address" />
                 <TextField fx:id="profileNameInput" prefHeight="31.0" promptText="Profile name" />
                 <TextField fx:id="ageInput" prefHeight="31.0" promptText="Age" />
-                <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addProfile" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Add" textFill="WHITE">
+                <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addProfile" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Add" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="10.0" />
                     </HBox.margin>
@@ -32,7 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Back" textFill="WHITE">
+                <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

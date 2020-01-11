@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.AccountsScreenController">
    <children>
@@ -22,25 +21,19 @@
       </TableView>
       <HBox prefHeight="50.0" prefWidth="700.0" spacing="10.0" AnchorPane.topAnchor="350.0">
          <children>
-            <TextField fx:id="emailInput" prefHeight="30.0" prefWidth="224.0" promptText="Email address" />
+            <TextField fx:id="emailInput" prefHeight="30.0" prefWidth="181.0" promptText="Email address" />
             <TextField fx:id="nameInput" prefHeight="31.0" promptText="Name" />
-            <TextField fx:id="addressInput" prefHeight="31.0" promptText="Address" />
-            <TextField fx:id="cityInput" prefHeight="30.0" prefWidth="103.0" promptText="City" />
-            <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addAccount" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Add" textFill="WHITE">
+            <TextField fx:id="addressInput" prefHeight="30.0" prefWidth="156.0" promptText="Address" />
+            <TextField fx:id="cityInput" prefHeight="30.0" prefWidth="119.0" promptText="City" />
+            <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addAccount" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Add" textFill="WHITE">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
-               <font>
-                  <Font name="Poppins Bold" size="12.0" />
-               </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Back" textFill="WHITE">
-               <font>
-                  <Font name="Poppins Bold" size="12.0" />
-               </font>
+            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

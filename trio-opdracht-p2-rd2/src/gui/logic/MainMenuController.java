@@ -31,10 +31,10 @@ public class MainMenuController {
 
     }
 
-    public void showWatchedScreen() throws Exception {
+    public void showWatchedProgramsScreen() throws Exception {
         stage = Main.getPrimaryStage();
 
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/WatchedScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/WatchedProgramsScreen.fxml"));
 
         stage.setScene(new Scene(root));
 

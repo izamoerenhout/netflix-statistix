@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,14 +11,17 @@
 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.MainMenuController">
    <children>
       <ImageView fitHeight="110.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
          <image>
-            <Image url="@../../netflix-statistix-logo.png" />
+            <Image url="@/img/netflix-statistix-logo.png" />
          </image></ImageView>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
          <children>
              <Button fx:id="buttonAccounts" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#showAccountsScreen" text="Accounts" />
             <Button fx:id="buttonProfiles" mnemonicParsing="false" onAction="#showProfilesScreen" text="Profiles" />
-            <Button fx:id="buttonWatched" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showWatchedScreen" text="Watched" />
+            <Button fx:id="buttonWatched" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showWatchedProgramsScreen" text="Watched programs" />
          </children>
       </HBox>
    </children>
