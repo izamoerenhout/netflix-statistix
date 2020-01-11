@@ -17,9 +17,8 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/** Controller for the Accounts screen */
+/** Controller for the Accounts screen. */
 public class AccountsScreenController implements Initializable {
-
     public Stage stage;
 
     public TextField emailInput;
@@ -34,6 +33,7 @@ public class AccountsScreenController implements Initializable {
     public TableColumn<Account, String> col_city;
 
     public Button buttonAdd;
+    public Button buttonDelete;
     public Button buttonBack;
 
     /** Returns to the Main Menu screen */
@@ -46,7 +46,7 @@ public class AccountsScreenController implements Initializable {
     }
 
     /** Gets called when the Accounts screen is opened. Prints a line of text, makes the Name, Address and City
-     *      cells editable and populates the TableView.
+     *      columns editable and populates the TableView.
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,7 +62,7 @@ public class AccountsScreenController implements Initializable {
         populateTableView();
     }
 
-    /** Method responsible for populating TableView with records from our database. */
+    /** Calls getAllAccounts from AccountDAO and populates the TableView. */
     private void populateTableView() {
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
 

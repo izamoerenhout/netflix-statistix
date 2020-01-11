@@ -2,7 +2,7 @@ package gui.logic;
 
 import appLogic.Watched_Program;
 import database.DatabaseConnector;
-import database.dao.WatchedDAO;
+import database.dao.WatchedProgramDAO;
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,25 +20,27 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
+/** Controller for the Watched Programs screen. */
 public class WatchedProgramsScreenController implements Initializable {
-
     public Stage stage;
 
     public TextField emailInput;
     public TextField profileNameInput;
     public TextField programIdInput;
     public TextField pctWatchedInput;
+
     public TableView<Watched_Program> tableWatched;
     public TableColumn<Watched_Program, String> col_email;
     public TableColumn<Watched_Program, String> col_accountName;
     public TableColumn<Watched_Program, String> col_profileName;
     public TableColumn<Watched_Program, Integer> col_programId;
     public TableColumn<Watched_Program, Integer> col_pctWatched;
+
+    public Button buttonDelete;
     public Button buttonAdd;
     public Button buttonBack;
 
-    private ObservableList<Watched_Program> list;
-
+    /** Returns to the Main Menu screen */
     public void returnToMainMenu() throws Exception {
         stage = Main.getPrimaryStage();
 
@@ -47,6 +49,9 @@ public class WatchedProgramsScreenController implements Initializable {
         stage.setScene(new Scene(root));
     }
 
+    /** Gets called when the Watched Programs screen is opened. Prints a line of text, makes the Email, Profile name, Program id
+     *      and % watched columns editable and populates the TableView.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving watched programs from the database...");
@@ -55,38 +60,11 @@ public class WatchedProgramsScreenController implements Initializable {
         populateTableView();
     }
 
-    // Method responsible for populating TableView with records from our database.
+    /** Calls getAllWatchedPrograms from WatchedProgramDAO and populates the TableView. */
     private void populateTableView() {
-        // Instantiate list.
-        list = FXCollections.observableArrayList();
+        WatchedProgramDAO watchedProgramDAO = new WatchedProgramDAO(new DatabaseConnector());
 
         try {
-            // Connect to the database.
-            Connection con = new DatabaseConnector().getConnection();
-
-            // Form an SQL query.
-            String query = "SELECT watched_program.email, account.name, watched_program.profile_name, watched_program.program_id, watched_program.pct_watched " +
-                    "FROM watched_program " +
-                    "JOIN account " +
-                    "ON account.email = watched_program.email;";
-
-            // Create a statement that will be used to execute the query.
-            Statement statement = con.createStatement();
-
-            // Execute the query. The result of the query will be stored in this variable.
-            ResultSet resultSet = statement.executeQuery(query);
-
-            //Iterate through ResultSet, put data into new Watched_Program object and add to list.
-            while (resultSet.next()) {
-                String email = resultSet.getString("email");
-                String accountName = resultSet.getString("name");
-                String profileName = resultSet.getString("profile_name");
-                int programId = resultSet.getInt("program_id");
-                int pctWatched = resultSet.getInt("pct_watched");
-
-                list.add(new Watched_Program(email, accountName, profileName, programId, pctWatched));
-            }
-
             // Set property to TableView columns.
             col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
             col_accountName.setCellValueFactory(new PropertyValueFactory<>("accountName"));
@@ -95,16 +73,16 @@ public class WatchedProgramsScreenController implements Initializable {
             col_pctWatched.setCellValueFactory(new PropertyValueFactory<>("pctWatched"));
 
             // Set data to TableView.
-            tableWatched.setItems(list);
+            tableWatched.setItems(watchedProgramDAO.getAllWatchedPrograms());
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    // Calls the insertWatched method from WatchedDAO and adds a new watched program into the database.
+    // Calls the insertWatched method from WatchedProgramDAO and adds a new watched program into the database.
     public void addWatchedProgram() {
-        WatchedDAO watched = new WatchedDAO(new DatabaseConnector());
+        WatchedProgramDAO watched = new WatchedProgramDAO(new DatabaseConnector());
 
         // Convert the user input in the fields "Program id" and "% watched" to an int
         // in order to store them into a new watched_program object.

@@ -1,23 +1,29 @@
 package database.dao;
 
-import appLogic.Account;
 import appLogic.Profile;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/** Data Access Object for the Profiles screen. */
 public class ProfileDAO {
     private DatabaseConnector databaseConnector;
 
+    /** Constructor class.
+     *
+     * @param databaseConnector Instantiates a new Database Connector.
+     */
     public ProfileDAO(DatabaseConnector databaseConnector) {
         this.databaseConnector = databaseConnector;
     }
 
-    // Retrieves all profiles from the database.
+    /** Retrieves all profiles from the database.
+     *
+     * @return ObservableList that will be stored in a TableView.
+     */
     public ObservableList<Profile> getAllProfiles() {
         // Instantiate profileList.
         ObservableList<Profile> profileList = FXCollections.observableArrayList();
@@ -62,7 +68,12 @@ public class ProfileDAO {
         return profileList;
     }
 
-    // Updates the account email of an existing profile in the database.
+    /** Updates the email of an existing profile in the database.
+     *
+     * @param profileEmail The new email address entered into the TableView cell, which will be put into the SET clause.
+     * @param profileName The corresponding profile name of that account, which will be put into the WHERE clause.
+     * @return True or false depending on whether the update was successful or not.
+     */
     public boolean updateProfileEmail(String profileEmail, String profileName) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
@@ -96,7 +107,13 @@ public class ProfileDAO {
         }
     }
 
-    // Updates the name of an existing profile in the database.
+    /** Updates the profile name of an existing profile in the database.
+     *
+     * @param profileName The new profile name entered into the TableView cell, which will be put into the SET clause.
+     * @param profileEmail The corresponding email address of that profile, which will be put into the WHERE clause.
+     * @param age The corresponding age of that profile, which will be put into the WHERE clause.
+     * @return True or false depending on whether the update was successful or not.
+     */
     public boolean updateProfileName(String profileName, String profileEmail, int age) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
@@ -131,7 +148,13 @@ public class ProfileDAO {
         }
     }
 
-    // Updates the age of an existing profile in the database.
+    /** Updates the profile name of an existing profile in the database.
+     *
+     * @param age The new age entered into the TableView cell, which will be put into the SET clause.
+     * @param email The corresponding email address of that profile, which will be put into the WHERE clause.
+     * @param profileName The corresponding profile name of that profile, which will be put into the WHERE clause.
+     * @return True or false depending on whether the update was successful or not.
+     */
     public boolean updateProfileAge(int age, String email, String profileName) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
@@ -166,7 +189,13 @@ public class ProfileDAO {
         }
     }
 
-    // Inserts a new profile into the database.
+    /** Inserts a new profile into the database.
+     *
+     * @param email The user's registered email address.
+     * @param profileName The user's profile name.
+     * @param age The user's age.
+     * @return True or false depending on whether the insertion was successful or not.
+     */
     public boolean insertProfile(String email, String profileName, int age) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
@@ -201,7 +230,12 @@ public class ProfileDAO {
         }
     }
 
-    // Deletes a profile from the database.
+    /** Deletes an existing profile from the database.
+     *
+     * @param email The profile's email address, which will be put into the WHERE clause.
+     * @param profileName The profile's name, which will be put into the WHERE clause.
+     * @return true or false depending on whether the deletion was successful or not.
+     */
     public boolean deleteProfile(String email, String profileName) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();

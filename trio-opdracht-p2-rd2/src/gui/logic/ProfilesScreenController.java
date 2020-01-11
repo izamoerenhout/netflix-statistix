@@ -18,21 +18,25 @@ import javafx.util.converter.IntegerStringConverter;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/** Controller for the Profiles screen. */
 public class ProfilesScreenController implements Initializable {
-
     public Stage stage;
 
     public TextField emailInput;
     public TextField profileNameInput;
     public TextField ageInput;
+
     public TableView<Profile> tableProfile;
     public TableColumn<Profile, String> col_email;
     public TableColumn<Profile, String> col_accountName;
     public TableColumn<Profile, String> col_profileName;
     public TableColumn<Profile, Integer> col_age;
+
+    public Button buttonDelete;
     public Button buttonAdd;
     public Button buttonBack;
 
+    /** Returns to the Main Menu screen */
     public void returnToMainMenu() throws Exception {
         stage = Main.getPrimaryStage();
 
@@ -41,6 +45,9 @@ public class ProfilesScreenController implements Initializable {
         stage.setScene(new Scene(root));
     }
 
+    /** Gets called when the Profiles screen is opened. Prints a line of text, makes the Email, Profile name and Age
+     *      columns editable and populates the TableView.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving profiles from the database...");
@@ -55,7 +62,7 @@ public class ProfilesScreenController implements Initializable {
         populateTableView();
     }
 
-    // Calls the getAllProfiles method from ProfileDAO and populates the TableView.
+    /** Calls getAllProfiles from ProfileDAO and populates the TableView. */
     private void populateTableView() {
         ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
 
@@ -74,7 +81,7 @@ public class ProfilesScreenController implements Initializable {
         }
     }
 
-    // Calls the insertProfile method from ProfileDAO and adds a new profile into the database.
+    /** Calls insertProfile from ProfileDAO and adds a new profile into the database. */
     public void addProfile() {
         ProfileDAO profile = new ProfileDAO(new DatabaseConnector());
 
@@ -105,6 +112,7 @@ public class ProfilesScreenController implements Initializable {
         }
     }
 
+    /** Calls updateProfileEmail from ProfileDAO and updates the email of an existing profile in the database. */
     public void onEditUpdateEmail(TableColumn.CellEditEvent<Profile, String> profileIntegerCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
         Profile profileEmail = tableProfile.getSelectionModel().getSelectedItem();
@@ -125,6 +133,7 @@ public class ProfilesScreenController implements Initializable {
         }
     }
 
+    /** Calls updateProfileName from ProfileDAO and updates the name of an existing profile in the database. */
     public void onEditUpdateProfileName(TableColumn.CellEditEvent<Profile, String> profileStringCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
         Profile profile = tableProfile.getSelectionModel().getSelectedItem();
@@ -147,6 +156,7 @@ public class ProfilesScreenController implements Initializable {
         }
     }
 
+    /** Calls updateProfileAge from ProfileDAO and updates the age of an existing profile in the database. */
     public void onEditUpdateProfileAge(TableColumn.CellEditEvent<Profile, Integer> profileIntegerCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
         Profile profile = tableProfile.getSelectionModel().getSelectedItem();

@@ -182,7 +182,7 @@ public class AccountDAO {
         }
     }
 
-    /** Inserts a new account into the database
+    /** Inserts a new account into the database.
      *
      * @param email The user's registered email address.
      * @param name The user's full name.
@@ -226,7 +226,7 @@ public class AccountDAO {
 
     /** Deletes an existing account from the database.
      *
-     * @param email
+     * @param email The account's email address, which will be put into the WHERE clause.
      * @return true or false depending on whether the deletion was successful or not.
      */
     public boolean deleteAccount(String email) {
