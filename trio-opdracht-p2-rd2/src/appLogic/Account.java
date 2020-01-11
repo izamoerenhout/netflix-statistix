@@ -1,18 +1,13 @@
 package appLogic;
 
 public class Account {
-
-    private int accountId;
+    private String email;
     private String name;
     private String address;
     private String city;
 
-    public Account() {
-
-    }
-
-    public Account(int accountId, String name, String address, String city) {
-        this.accountId = accountId;
+    public Account(String email, String name, String address, String city) {
+        this.email = email;
         this.name = name;
         this.address = address;
         this.city = city;
@@ -20,12 +15,12 @@ public class Account {
 
     // Every class atrribute has its own getter and setter.
 
-    public int getAccountId() {
-        return accountId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAccountId(int accountId) {
-        this.accountId =  accountId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {

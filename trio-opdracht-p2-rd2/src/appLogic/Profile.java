@@ -1,20 +1,13 @@
 package appLogic;
 
-import java.util.ArrayList;
-
 public class Profile {
-
-    private int id;
+    private String email;
     private String accountName;
     private String profileName;
     private int age;
 
-    public Profile() {
-
-    }
-
-    public Profile(int id, String accountName, String profileName, int age) {
-        this.id = id;
+    public Profile(String email, String accountName, String profileName, int age) {
+        this.email = email;
         this.accountName = accountName;
         this.profileName = profileName;
         this.age = age;
@@ -22,12 +15,12 @@ public class Profile {
 
     // Every class atrribute has its own getter and setter.
 
-    public int getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getProfileName() {

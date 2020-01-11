@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class ProfileDAO {
-
     private DatabaseConnector databaseConnector;
 
     public ProfileDAO(DatabaseConnector databaseConnector) {
@@ -28,10 +27,10 @@ public class ProfileDAO {
 
         try {
             // Form an SQL query.
-            String query = "SELECT Profile.AccountId, Account.Name, Profile.ProfileName, Profile.Age \n" +
-                    "FROM Profile \n" +
-                    "JOIN Account \n" +
-                    "ON Account.AccountId = Profile.AccountId;";
+            String query = "SELECT profile.email, account.name, profile.profile_name, profile.age " +
+                    "FROM profile " +
+                    "JOIN account " +
+                    "ON account.email = profile.email;";
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -41,12 +40,12 @@ public class ProfileDAO {
 
             //Iterate through ResultSet, put data into new Profile object and add to list.
             while (resultSet.next()) {
-                int accountId = resultSet.getInt("AccountId");
-                String accountName = resultSet.getString("Name");
-                String profileName = resultSet.getString("ProfileName");
-                int age = resultSet.getInt("Age");
+                String email = resultSet.getString("email");
+                String accountName = resultSet.getString("name");
+                String profileName = resultSet.getString("profile_name");
+                int age = resultSet.getInt("age");
 
-                profileList.add(new Profile(accountId, accountName, profileName, age));
+                profileList.add(new Profile(email, accountName, profileName, age));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,18 +62,18 @@ public class ProfileDAO {
         return profileList;
     }
 
-    // Updates the id of an existing account in the database.
-    public boolean updateAccountId(int profileAccountId, String profileName) {
+    // Updates the account email of an existing profile in the database.
+    public boolean updateProfileEmail(String profileEmail, String profileName) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Profile \n" +
-                            "SET AccountId = %d \n" +
-                            "WHERE ProfileName = '%s';",
-                    profileAccountId,
-                    profileName);
+            String query = String.format("UPDATE profile " +
+                            "SET email = '%s' " +
+                            "WHERE profile_name = '%s';",
+                            profileEmail,
+                            profileName);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -97,19 +96,19 @@ public class ProfileDAO {
         }
     }
 
-    // Updates the id of an existing account in the database.
-    public boolean updateProfileName(String profileName, int id, int age) {
+    // Updates the name of an existing profile in the database.
+    public boolean updateProfileName(String profileName, String profileEmail, int age) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Profile \n" +
-                            "SET ProfileName = '%s' \n" +
-                            "WHERE AccountId = %d AND Age = %d;",
-                    profileName,
-                    id,
-                    age);
+            String query = String.format("UPDATE profile " +
+                            "SET profile_name = '%s' " +
+                            "WHERE email = '%s' AND age = %d;",
+                            profileName,
+                            profileEmail,
+                            age);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -132,18 +131,19 @@ public class ProfileDAO {
         }
     }
 
-    // Updates the id of an existing account in the database.
-    public boolean updateProfileAge(int profileAge, String profileName) {
+    // Updates the age of an existing profile in the database.
+    public boolean updateProfileAge(int age, String email, String profileName) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Profile \n" +
-                            "SET Age = %d \n" +
-                            "WHERE ProfileName = '%s';",
-                    profileAge,
-                    profileName);
+            String query = String.format("UPDATE profile " +
+                            "SET age = %d " +
+                            "WHERE email = '%s' AND profile_name = '%s';",
+                            age,
+                            email,
+                            profileName);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -167,16 +167,17 @@ public class ProfileDAO {
     }
 
     // Inserts a new profile into the database.
-    public boolean insertProfile(int id, String profileName, int age) {
+    public boolean insertProfile(String email, String profileName, int age) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("INSERT INTO Profile (AccountId, ProfileName, Age) VALUES('%d', '%s', '%d');",
-                    id,
-                    profileName,
-                    age);
+            String query = String.format("INSERT INTO profile (email, profile_name, age) " +
+                            "VALUES('%s', '%s', '%d');",
+                            email,
+                            profileName,
+                            age);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -201,13 +202,16 @@ public class ProfileDAO {
     }
 
     // Deletes a profile from the database.
-    public boolean deleteProfile(int id, String profileName) {
+    public boolean deleteProfile(String email, String profileName) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = "DELETE FROM Profile WHERE AccountId = " + id + " AND ProfileName = '" + profileName + "'";
+            String query = String.format("DELETE FROM profile " +
+                    "WHERE email = '%s' AND profile_name = '%s';",
+                    email,
+                    profileName);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();

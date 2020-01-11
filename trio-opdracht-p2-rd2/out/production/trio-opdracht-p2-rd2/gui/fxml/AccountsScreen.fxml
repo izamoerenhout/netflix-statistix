@@ -10,22 +10,23 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.AccountsScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.AccountsScreenController">
    <children>
-      <TableView fx:id="tableAccount" layoutX="10.0" layoutY="10.0" prefHeight="341.0" prefWidth="580.0">
+      <TableView fx:id="tableAccount" layoutX="10.0" layoutY="10.0" prefHeight="341.0" prefWidth="680.0">
         <columns>
-          <TableColumn fx:id="col_id" prefWidth="75.0" text="AccountId" />
-          <TableColumn fx:id="col_name" onEditCommit="#onEditUpdateAccountName" prefWidth="160.0" text="Name" />
-            <TableColumn fx:id="col_address" onEditCommit="#onEditUpdateAccountAddress" prefWidth="232.0" text="Address" />
-            <TableColumn fx:id="col_city" onEditCommit="#onEditUpdateAccountCity" prefWidth="97.0" text="City" />
+          <TableColumn fx:id="col_email" prefWidth="207.0" text="Email" />
+          <TableColumn fx:id="col_name" onEditCommit="#onEditUpdateAccountName" prefWidth="172.0" text="Name" />
+            <TableColumn fx:id="col_address" onEditCommit="#onEditUpdateAccountAddress" prefWidth="194.0" text="Address" />
+            <TableColumn fx:id="col_city" onEditCommit="#onEditUpdateAccountCity" prefWidth="105.0" text="City" />
         </columns>
       </TableView>
-      <HBox prefHeight="50.0" prefWidth="600.0" spacing="10.0" AnchorPane.topAnchor="350.0">
+      <HBox prefHeight="50.0" prefWidth="700.0" spacing="10.0" AnchorPane.topAnchor="350.0">
          <children>
+            <TextField fx:id="emailInput" prefHeight="30.0" prefWidth="224.0" promptText="Email address" />
             <TextField fx:id="nameInput" prefHeight="31.0" promptText="Name" />
             <TextField fx:id="addressInput" prefHeight="31.0" promptText="Address" />
-            <TextField fx:id="cityInput" prefHeight="31.0" promptText="City" />
-            <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addAccount" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Add" textFill="WHITE">
+            <TextField fx:id="cityInput" prefHeight="30.0" prefWidth="103.0" promptText="City" />
+            <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addAccount" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Add" textFill="WHITE">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
@@ -36,7 +37,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Back" textFill="WHITE">
+            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: rgb(131,16,16); -fx-border-color: white; -fx-border-radius: 2;" text="Back" textFill="WHITE">
                <font>
                   <Font name="Poppins Bold" size="12.0" />
                </font>

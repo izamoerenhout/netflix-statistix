@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 
 public class DatabaseConnector {
 
-//    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;";
-    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;";
+    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;";
+//    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;";
     private Connection connection = null;
 
     public Connection getConnection() {

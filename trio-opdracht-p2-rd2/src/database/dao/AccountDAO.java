@@ -27,7 +27,7 @@ public class AccountDAO {
         try {
             // Form an SQL query.
             String query = "SELECT * \n" +
-                    " FROM Account;";
+                    "FROM Account;";
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -36,12 +36,12 @@ public class AccountDAO {
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
-                int accountId = resultSet.getInt("AccountId");
-                String name = resultSet.getString("Name");
-                String address = resultSet.getString("Address");
-                String city = resultSet.getString("City");
+                String email = resultSet.getString("email");
+                String name = resultSet.getString("name");
+                String address = resultSet.getString("address");
+                String city = resultSet.getString("city");
 
-                accountList.add(new Account(accountId, name, address, city));
+                accountList.add(new Account(email, name, address, city));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,17 +59,17 @@ public class AccountDAO {
     }
 
     // Updates the name of an existing account in the database.
-    public boolean updateAccountName(String name, int id) {
+    public boolean updateAccountName(String name, String email) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Account \n" +
-                            "SET Name = '%s' \n" +
-                            "WHERE AccountId = %d;",
-                    name,
-                    id);
+            String query = String.format("UPDATE account " +
+                            "SET name = '%s' " +
+                            "WHERE email = '%s';",
+                            name,
+                            email);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -93,17 +93,17 @@ public class AccountDAO {
     }
 
     // Updates the address of an existing account in the database.
-    public boolean updateAccountAddress(String address, int id) {
+    public boolean updateAccountAddress(String address, String email) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Account \n" +
-                            "SET Address = '%s' \n" +
-                            "WHERE AccountId = %d;",
-                    address,
-                    id);
+            String query = String.format("UPDATE account " +
+                            "SET address = '%s' " +
+                            "WHERE email = '%s';",
+                            address,
+                            email);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -127,17 +127,17 @@ public class AccountDAO {
     }
 
     // Updates the city of an existing account in the database.
-    public boolean updateAccountCity(String city, int id) {
+    public boolean updateAccountCity(String city, String email) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("UPDATE Account \n" +
-                            "SET City = '%s' \n" +
-                            "WHERE AccountId = %d",
-                    city,
-                    id);
+            String query = String.format("UPDATE account " +
+                            "SET city = '%s' " +
+                            "WHERE email = '%s'",
+                            city,
+                            email);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -161,17 +161,18 @@ public class AccountDAO {
     }
 
     // Inserts a new account into the database.
-    public boolean insertAccount(String name, String address, String city) {
+    public boolean insertAccount(String email, String name, String address, String city) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = String.format("INSERT INTO Account (Name, Address, City) \n" +
-                            "VALUES('%s', '%s', '%s');",
-                    name,
-                    address,
-                    city);
+            String query = String.format("INSERT INTO account (email, name, address, city) " +
+                            "VALUES('%s', '%s', '%s', '%s');",
+                            email,
+                            name,
+                            address,
+                            city);
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();
@@ -195,14 +196,16 @@ public class AccountDAO {
     }
 
     // Deletes an account from the database.
-    public boolean deleteAccount(int id) {
+    public boolean deleteAccount(String email) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
         try {
             // Form an SQL query.
-            String query = "DELETE FROM Account \n" +
-                    "WHERE AccountId = " + id;
+            String query = String.format("DELETE FROM account " +
+                            "WHERE email = '%s';)",
+                            email);
+
 
             // Create a statement that will be used to execute the query.
             Statement statement = connection.createStatement();

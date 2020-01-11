@@ -4,8 +4,6 @@ import appLogic.Account;
 import database.dao.AccountDAO;
 import database.DatabaseConnector;
 import gui.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -16,20 +14,18 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class AccountsScreenController implements Initializable {
 
     public Stage stage;
 
+    public TextField emailInput;
     public TextField nameInput;
     public TextField addressInput;
     public TextField cityInput;
     public TableView<Account> tableAccount;
-    public TableColumn<Account, Integer> col_id;
+    public TableColumn<Account, String> col_email;
     public TableColumn<Account, String> col_name;
     public TableColumn<Account, String> col_address;
     public TableColumn<Account, String> col_city;
@@ -64,7 +60,7 @@ public class AccountsScreenController implements Initializable {
 
         try {
             // Set property to TableView columns.
-            col_id.setCellValueFactory(new PropertyValueFactory<>("accountId"));
+            col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
             col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
             col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
             col_city.setCellValueFactory(new PropertyValueFactory<>("city"));
@@ -79,7 +75,7 @@ public class AccountsScreenController implements Initializable {
     // Calls the insertAccount method from AccountDAO and adds a new account into the database.
     public void addAccount() {
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
-        boolean successful = accountDAO.insertAccount(nameInput.getText(), addressInput.getText(), cityInput.getText());
+        boolean successful = accountDAO.insertAccount(emailInput.getText(), nameInput.getText(), addressInput.getText(), cityInput.getText());
 
         if (successful) {
             Alert success = new Alert(Alert.AlertType.INFORMATION);
@@ -88,6 +84,7 @@ public class AccountsScreenController implements Initializable {
             success.setContentText("Account has been added successfully.");
             success.show();
             populateTableView();
+            emailInput.clear();
             nameInput.clear();
             addressInput.clear();
             cityInput.clear();
@@ -97,6 +94,7 @@ public class AccountsScreenController implements Initializable {
             failed.setHeaderText(null);
             failed.setContentText("Failed to add account.");
             failed.show();
+            emailInput.clear();
             nameInput.clear();
             addressInput.clear();
             cityInput.clear();
@@ -105,12 +103,12 @@ public class AccountsScreenController implements Initializable {
 
     public void onEditUpdateAccountName(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
-        Account accountName = tableAccount.getSelectionModel().getSelectedItem();
-        accountName.setName(accountStringCellEditEvent.getNewValue());
+        Account account = tableAccount.getSelectionModel().getSelectedItem();
+        account.setName(accountStringCellEditEvent.getNewValue());
 
         // Update value in the database.
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
-        boolean successful = accountDAO.updateAccountName(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
+        boolean successful = accountDAO.updateAccountName(accountStringCellEditEvent.getNewValue(), account.getEmail());
 
         if (successful) {
             populateTableView();
@@ -125,12 +123,12 @@ public class AccountsScreenController implements Initializable {
 
     public void onEditUpdateAccountAddress(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
-        Account accountName = tableAccount.getSelectionModel().getSelectedItem();
-        accountName.setAddress(accountStringCellEditEvent.getNewValue());
+        Account account = tableAccount.getSelectionModel().getSelectedItem();
+        account.setAddress(accountStringCellEditEvent.getNewValue());
 
         // Update value in the database.
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
-        boolean successful = accountDAO.updateAccountAddress(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
+        boolean successful = accountDAO.updateAccountAddress(accountStringCellEditEvent.getNewValue(), account.getEmail());
 
         if (successful) {
             populateTableView();
@@ -145,12 +143,12 @@ public class AccountsScreenController implements Initializable {
 
     public void onEditUpdateAccountCity(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
-        Account accountName = tableAccount.getSelectionModel().getSelectedItem();
-        accountName.setCity(accountStringCellEditEvent.getNewValue());
+        Account account = tableAccount.getSelectionModel().getSelectedItem();
+        account.setCity(accountStringCellEditEvent.getNewValue());
 
         // Update value in the database.
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
-        boolean successful = accountDAO.updateAccountCity(accountStringCellEditEvent.getNewValue(), accountName.getAccountId());
+        boolean successful = accountDAO.updateAccountCity(accountStringCellEditEvent.getNewValue(), account.getEmail());
 
         if (successful) {
             populateTableView();
