@@ -16,7 +16,7 @@
           <TableColumn fx:id="col_email" prefWidth="207.0" text="Email" />
           <TableColumn fx:id="col_name" onEditCommit="#onEditUpdateAccountName" prefWidth="172.0" text="Name" />
             <TableColumn fx:id="col_address" onEditCommit="#onEditUpdateAccountAddress" prefWidth="233.0" text="Address" />
-            <TableColumn fx:id="col_city" onEditCommit="#onEditUpdateAccountCity" prefWidth="162.0" text="City" />
+            <TableColumn fx:id="col_city" onEditCommit="#onEditUpdateAccountCity" prefWidth="153.0" text="City" />
         </columns>
       </TableView>
       <HBox prefHeight="50.0" prefWidth="800.0" spacing="10.0" AnchorPane.topAnchor="350.0">

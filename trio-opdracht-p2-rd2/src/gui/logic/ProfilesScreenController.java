@@ -32,8 +32,8 @@ public class ProfilesScreenController implements Initializable {
     public TableColumn<Profile, String> col_profileName;
     public TableColumn<Profile, Integer> col_age;
 
-    public Button buttonDelete;
     public Button buttonAdd;
+    public Button buttonDelete;
     public Button buttonBack;
 
     /** Returns to the Main Menu screen */

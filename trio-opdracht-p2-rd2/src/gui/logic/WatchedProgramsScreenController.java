@@ -36,8 +36,8 @@ public class WatchedProgramsScreenController implements Initializable {
     public TableColumn<Watched_Program, Integer> col_programId;
     public TableColumn<Watched_Program, Integer> col_pctWatched;
 
-    public Button buttonDelete;
     public Button buttonAdd;
+    public Button buttonDelete;
     public Button buttonBack;
 
     /** Returns to the Main Menu screen */
@@ -80,7 +80,7 @@ public class WatchedProgramsScreenController implements Initializable {
         }
     }
 
-    // Calls the insertWatched method from WatchedProgramDAO and adds a new watched program into the database.
+    /** Calls insertWatchedProgram from WatchedProgramDAO and populates the TableView. */
     public void addWatchedProgram() {
         WatchedProgramDAO watched = new WatchedProgramDAO(new DatabaseConnector());
 
