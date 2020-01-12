@@ -32,7 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-            <Button fx:id="buttonDelete" mnemonicParsing="false" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Delete" textFill="WHITE">
+            <Button fx:id="buttonDelete" onAction="#deleteProfile" mnemonicParsing="false" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Delete" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

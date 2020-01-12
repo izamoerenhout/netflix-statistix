@@ -16,8 +16,8 @@
                 <TableColumn fx:id="col_email" prefWidth="228.0" text="Email" />
             <TableColumn fx:id="col_accountName" prefWidth="201.0" text="Account name" />
                 <TableColumn fx:id="col_profileName" prefWidth="175.0" text="Profile name" />
-                <TableColumn fx:id="col_programId" minWidth="5.0" prefWidth="105.0" text="Program id" />
-                <TableColumn fx:id="col_pctWatched" prefWidth="68.0" text="\% watched" />
+                <TableColumn fx:id="col_programId" minWidth="5.0" onEditCommit="#onEditUpdateWatchedProgramId" prefWidth="93.0" text="Program id" />
+                <TableColumn fx:id="col_pctWatched" onEditCommit="#onEditUpdateWatchedProgramPctWatched" prefWidth="67.0" text="\% watched" />
             </columns>
         </TableView>
         <HBox prefHeight="47.0" prefWidth="800.0" spacing="10.0" AnchorPane.topAnchor="350.0">
@@ -34,7 +34,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-            <Button fx:id="buttonDelete" mnemonicParsing="false" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Delete" textFill="WHITE">
+            <Button fx:id="buttonDelete" mnemonicParsing="false" onAction="#deleteWatchedProgram" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: rgb(229, 9, 20); -fx-border-color: white; -fx-border-radius: 2;" text="Delete" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

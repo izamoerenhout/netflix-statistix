@@ -4,20 +4,17 @@ import appLogic.Watched_Program;
 import database.DatabaseConnector;
 import database.dao.WatchedProgramDAO;
 import gui.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 
 /** Controller for the Watched Programs screen. */
@@ -55,6 +52,11 @@ public class WatchedProgramsScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving watched programs from the database...");
+
+        // Make the program id and % watched columns editable.
+        tableWatched.setEditable(true);
+        col_programId.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        col_pctWatched.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
         // Retrieve watched programs from database and put them into the TableView.
         populateTableView();
@@ -103,6 +105,78 @@ public class WatchedProgramsScreenController implements Initializable {
             failed.setTitle("Watched program creation failed");
             failed.setHeaderText(null);
             failed.setContentText("Failed to add watched program.");
+            failed.show();
+        }
+    }
+
+    /** Calls updateWatchedProgramId from WatchedProgramDAO and updates the program id of an existing watched program in the database. */
+    public void onEditUpdateWatchedProgramId(TableColumn.CellEditEvent<Watched_Program, Integer> watchedProgramIntegerCellEditEvent) {
+        // Store current program id name in variable.
+        Watched_Program watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
+        int currentProgramId = watchedProgram.getProgramId();
+
+        // Update value of cell in TableView to new value entered by user.
+        int newProgramId = watchedProgramIntegerCellEditEvent.getNewValue();
+        watchedProgram.setProgramId(newProgramId);
+
+        // Update value in the database.
+        WatchedProgramDAO watchedProgramDAO = new WatchedProgramDAO(new DatabaseConnector());
+        boolean successful = watchedProgramDAO.updateWatchedProgramId(newProgramId, currentProgramId,
+                watchedProgram.getEmail(), watchedProgram.getProfileName());
+
+        if (successful){
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Watched program update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update program id.");
+            failed.show();
+        }
+    }
+
+    /** Calls updateWatchedProgramPctWatched from WatchedProgramDAO and updates the percentage watched of an existing watched program in the database. */
+    public void onEditUpdateWatchedProgramPctWatched(TableColumn.CellEditEvent<Watched_Program, Integer> watchedProgramIntegerCellEditEvent) {
+        // Update value of cell in TableView to new value entered by user.
+        Watched_Program watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
+        watchedProgram.setPctWatched(watchedProgramIntegerCellEditEvent.getNewValue());
+
+        // Update value in the database.
+        WatchedProgramDAO watchedProgramDAO = new WatchedProgramDAO(new DatabaseConnector());
+        boolean successful = watchedProgramDAO.updateWatchedProgramPctWatched(watchedProgram.getPctWatched(),
+                watchedProgram.getProgramId(), watchedProgram.getEmail(), watchedProgram.getProfileName());
+
+        if (successful){
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Watched program update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update program id.");
+            failed.show();
+        }
+    }
+
+    /** Calls deleteWatchedProgram from WatchedProgramDAO and deleted an existing watched program from the database. */
+    public void deleteWatchedProgram() {
+        Watched_Program watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
+
+        WatchedProgramDAO watchedProgramDAO = new WatchedProgramDAO(new DatabaseConnector());
+        boolean successful = watchedProgramDAO.deleteWatchedProgram(watchedProgram.getEmail(), watchedProgram.getProfileName(),
+                watchedProgram.getProgramId());
+
+        if (successful) {
+            Alert success = new Alert(Alert.AlertType.INFORMATION);
+            success.setTitle("Watched program deletion success");
+            success.setHeaderText(null);
+            success.setContentText("Watched program has been deleted successfully.");
+            success.show();
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Watched program deletion failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to delete watched program.");
             failed.show();
         }
     }

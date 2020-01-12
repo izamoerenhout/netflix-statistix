@@ -4,7 +4,6 @@ import appLogic.Profile;
 import database.DatabaseConnector;
 import database.dao.ProfileDAO;
 import gui.Main;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -14,7 +13,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -52,7 +50,7 @@ public class ProfilesScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving profiles from the database...");
 
-        // Make the id, profileName and age column editable.
+        // Make the email, profileName and age column editable.
         tableProfile.setEditable(true);
         col_email.setCellFactory(TextFieldTableCell.forTableColumn());
         col_profileName.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -135,15 +133,17 @@ public class ProfilesScreenController implements Initializable {
 
     /** Calls updateProfileName from ProfileDAO and updates the name of an existing profile in the database. */
     public void onEditUpdateProfileName(TableColumn.CellEditEvent<Profile, String> profileStringCellEditEvent) {
-        // Update value of cell in TableView to new value entered by user.
+        // Store current profile name in variable.
         Profile profile = tableProfile.getSelectionModel().getSelectedItem();
+        String currentProfileName = profile.getProfileName();
+
+        // Update value of cell in TableView to new value entered by user.
         profile.setProfileName(profileStringCellEditEvent.getNewValue());
+        String newProfileName = profile.getProfileName();
 
         // Update value in the database.
         ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
-        boolean successful = profileDAO.updateProfileName(profileStringCellEditEvent.getNewValue(), profile.getEmail(), profile.getAge());
-
-        // Krijg alleen een fout melding als in Gerda of Lauran wil aanpassen, ik weet niet hoe ik dat moet verhelpen.
+        boolean successful = profileDAO.updateProfileName(newProfileName, profile.getEmail(), currentProfileName, profile.getAge());
 
         if (successful){
             populateTableView();
@@ -173,6 +173,29 @@ public class ProfilesScreenController implements Initializable {
             failed.setTitle("Profile update failed");
             failed.setHeaderText(null);
             failed.setContentText("Failed to update profile age.");
+            failed.show();
+        }
+    }
+
+    /** Calls deleteProfile from ProfileDAO and deleted an existing profile from the database. */
+    public void deleteProfile() {
+        Profile profile = tableProfile.getSelectionModel().getSelectedItem();
+
+        ProfileDAO profileDAO = new ProfileDAO(new DatabaseConnector());
+        boolean successful = profileDAO.deleteProfile(profile.getEmail(), profile.getProfileName(), profile.getAge());
+
+        if (successful) {
+            Alert success = new Alert(Alert.AlertType.INFORMATION);
+            success.setTitle("Profile deletion success");
+            success.setHeaderText(null);
+            success.setContentText("Profile has been deleted successfully.");
+            success.show();
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Profile deletion failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to delete profile.");
             failed.show();
         }
     }

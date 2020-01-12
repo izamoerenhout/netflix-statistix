@@ -109,12 +109,12 @@ public class ProfileDAO {
 
     /** Updates the profile name of an existing profile in the database.
      *
-     * @param profileName The new profile name entered into the TableView cell, which will be put into the SET clause.
+     * @param newProfileName The new profile name entered into the TableView cell, which will be put into the SET clause.
      * @param profileEmail The corresponding email address of that profile, which will be put into the WHERE clause.
-     * @param age The corresponding age of that profile, which will be put into the WHERE clause.
+     * @param currentProfileName The corresponding age of that profile, which will be put into the WHERE clause.
      * @return True or false depending on whether the update was successful or not.
      */
-    public boolean updateProfileName(String profileName, String profileEmail, int age) {
+    public boolean updateProfileName(String newProfileName, String profileEmail, String currentProfileName, int age) {
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
 
@@ -122,9 +122,10 @@ public class ProfileDAO {
             // Form an SQL query.
             String query = String.format("UPDATE profile " +
                             "SET profile_name = '%s' " +
-                            "WHERE email = '%s' AND age = %d;",
-                            profileName,
+                            "WHERE email = '%s' AND profile_name = '%s' AND age = %d;",
+                            newProfileName,
                             profileEmail,
+                            currentProfileName,
                             age);
 
             // Create a statement that will be used to execute the query.
@@ -255,6 +256,47 @@ public class ProfileDAO {
 
             return true;
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /** Deletes an existing profile from the database.
+     *
+     * @param email The profile's email address, which will be put into the WHERE clause.
+     * @param profileName The profile's name, which will be put into the WHERE clause.
+     * @param age The profile's age, which will be put into the WHERE clause.
+     * @return true or false depending on whether the deletion was successful or not.
+     */
+    public boolean deleteProfile(String email, String profileName, int age) {
+        // Connect to the database.
+        Connection connection = databaseConnector.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = String.format("DELETE FROM profile " +
+                            "WHERE email = '%s' AND profile_name = '%s' AND age = %d;",
+                    email,
+                    profileName,
+                    age);
+
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the insertion.
+            statement.execute(query);
+
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
             return false;

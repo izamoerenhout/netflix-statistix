@@ -13,7 +13,7 @@
    <children>
       <TableView fx:id="tableAccount" layoutX="10.0" layoutY="10.0" prefHeight="341.0" prefWidth="780.0">
         <columns>
-          <TableColumn fx:id="col_email" prefWidth="207.0" text="Email" />
+          <TableColumn fx:id="col_email" onEditCommit="#onEditUpdateAccountEmail" prefWidth="207.0" text="Email" />
           <TableColumn fx:id="col_name" onEditCommit="#onEditUpdateAccountName" prefWidth="172.0" text="Name" />
             <TableColumn fx:id="col_address" onEditCommit="#onEditUpdateAccountAddress" prefWidth="233.0" text="Address" />
             <TableColumn fx:id="col_city" onEditCommit="#onEditUpdateAccountCity" prefWidth="153.0" text="City" />

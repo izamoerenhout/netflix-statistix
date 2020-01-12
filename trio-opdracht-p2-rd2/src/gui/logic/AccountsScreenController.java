@@ -52,8 +52,9 @@ public class AccountsScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Retrieving accounts from the database...");
 
-        // Make the name, address and city column editable.
+        // Make the email, name, address and city column editable.
         tableAccount.setEditable(true);
+        col_email.setCellFactory(TextFieldTableCell.forTableColumn());
         col_name.setCellFactory(TextFieldTableCell.forTableColumn());
         col_address.setCellFactory(TextFieldTableCell.forTableColumn());
         col_city.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -106,6 +107,31 @@ public class AccountsScreenController implements Initializable {
             nameInput.clear();
             addressInput.clear();
             cityInput.clear();
+        }
+    }
+
+    /** Calls updateAccountEmail from AccountDAO and updates the email address of an existing account in the database. */
+    public void onEditUpdateAccountEmail(TableColumn.CellEditEvent<Account, String> accountStringCellEditEvent) {
+        Account account = tableAccount.getSelectionModel().getSelectedItem();
+        // Store current email address in variable.
+        String currentEmail = account.getEmail();
+
+        // Update value of cell in TableView to new value entered by user.
+        account.setEmail(accountStringCellEditEvent.getNewValue());
+        String newEmail = account.getEmail();
+
+        // Update value in the database.
+        AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
+        boolean successful = accountDAO.updateAccountEmail(newEmail, currentEmail);
+
+        if (successful) {
+            populateTableView();
+        } else {
+            Alert failed = new Alert(Alert.AlertType.WARNING);
+            failed.setTitle("Account update failed");
+            failed.setHeaderText(null);
+            failed.setContentText("Failed to update account email.");
+            failed.show();
         }
     }
 
@@ -172,6 +198,7 @@ public class AccountsScreenController implements Initializable {
         }
     }
 
+    /** Calls deleteAccount from AccountDAO and deleted an existing account from the database. */
     public void deleteAccount() {
         Account account = tableAccount.getSelectionModel().getSelectedItem();
 

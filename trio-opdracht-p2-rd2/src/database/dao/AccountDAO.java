@@ -67,6 +67,45 @@ public class AccountDAO {
 
     /** Updates the name of an existing account in the database.
      *
+     * @param newEmail The new email address entered in the TableView cell, which will be put into the SET clause.
+     * @param currentEmail The current email address of that account, which will be put into the WHERE clause.
+     * @return True or false depending on whether the update was successful or not.
+     */
+    public boolean updateAccountEmail(String newEmail, String currentEmail) {
+        // Connect to the database.
+        Connection connection = databaseConnector.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = String.format("UPDATE account " +
+                            "SET email = '%s' " +
+                            "WHERE email = '%s';",
+                    newEmail,
+                    currentEmail);
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the update.
+            statement.executeUpdate(query);
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /** Updates the name of an existing account in the database.
+     *
      * @param name The new name entered in the TableView cell, which will be put into the SET clause.
      * @param email The corresponding email address of that account, which will be put into the WHERE clause.
      * @return True or false depending on whether the update was successful or not.
