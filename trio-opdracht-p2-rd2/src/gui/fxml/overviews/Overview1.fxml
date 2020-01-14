@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.overviewControllers.Overview1Controller">
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.overviewControllers.Overview1Controller">
     <opaqueInsets>
         <Insets />
     </opaqueInsets>
@@ -17,7 +13,7 @@
     </padding>
    <children>
       <Label text="Select a series:" textFill="WHITE" />
-      <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
+      <ComboBox fx:id="comboBox" prefWidth="150.0" />
       <HBox prefHeight="295.0" prefWidth="560.0">
          <VBox.margin>
             <Insets top="25.0" />

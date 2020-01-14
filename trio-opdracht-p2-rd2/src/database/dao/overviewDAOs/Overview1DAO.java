@@ -2,6 +2,7 @@ package database.dao.overviewDAOs;
 
 import appLogic.Account;
 import appLogic.overviewModelObjects.Overview1;
+import appLogic.overviewModelObjects.SeriesTitle;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -73,5 +74,42 @@ public class Overview1DAO {
         }
 
         return recordList;
+    }
+
+    /** Retrieves all series titles from the database. */
+    public ObservableList<String> getAllSeriesTitles() {
+        // Instantiate seriesTitleList.
+        ObservableList<String> seriesTitleList = FXCollections.observableArrayList();
+
+        // Connect to the database.
+        Connection connection = databaseConnector.getConnection();
+
+        try {
+            // Form an SQL query.
+            String query = "SELECT series_title " +
+                    "FROM series;";
+
+            // Create a statement that will be used to execute the query.
+            Statement statement = connection.createStatement();
+
+            // Execute the query. The result of the query will be stored in this variable.
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                seriesTitleList.add(resultSet.getString("series_title"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return seriesTitleList;
     }
 }

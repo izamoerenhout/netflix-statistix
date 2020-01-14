@@ -1,14 +1,15 @@
 package gui.logic.overviewControllers;
 
+import appLogic.overviewModelObjects.Overview1;
 import appLogic.overviewModelObjects.SeriesTitle;
 import database.DatabaseConnector;
-import database.dao.overviewDAOs.SeriesTitleDAO;
+import database.dao.overviewDAOs.Overview1DAO;
 import gui.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -17,7 +18,7 @@ import java.util.ResourceBundle;
 public class Overview1Controller implements Initializable {
     public Stage stage;
 
-    public ChoiceBox<SeriesTitle> seriesTitles;
+    public ComboBox<String> comboBox;
 
     /** Returns to the Main Menu screen */
     public void returnToMainMenu() throws Exception {
@@ -30,11 +31,7 @@ public class Overview1Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        populateComboBox();
-    }
-
-    public void populateComboBox() {
-        SeriesTitleDAO seriesTitleDAO = new SeriesTitleDAO(new DatabaseConnector());
-        seriesTitles.setItems(seriesTitleDAO.getAllSeriesTitles());
+        Overview1DAO overview1DAO = new Overview1DAO(new DatabaseConnector());
+        comboBox.setItems(overview1DAO.getAllSeriesTitles());
     }
 }
