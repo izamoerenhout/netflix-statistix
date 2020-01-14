@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="230.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.overviewControllers.Overview2Controller">
+    <children>
+        <ImageView fitHeight="111.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <image>
+                <!--            <Image url="@/img/netflix-statistix-logo.png" />-->
+            </image></ImageView>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+            <children>
+                <Button fx:id="buttonAccounts" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#showAccountsScreen" text="Accounts" />
+                <Button fx:id="buttonProfiles" mnemonicParsing="false" onAction="#showProfilesScreen" text="Profiles" />
+                <Button fx:id="buttonWatched" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showWatchedProgramsScreen" text="Watched programs" />
+                <Button fx:id="buttonOverviews" mnemonicParsing="false" onAction="#showOverviewSelectionScreen" text="Overviews" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </HBox>
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <padding>
+        <Insets top="20.0" />
+    </padding>
+
+</VBox>

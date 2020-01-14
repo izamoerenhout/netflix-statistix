@@ -36,7 +36,7 @@ public class AccountsScreenController implements Initializable {
     public Button buttonDelete;
     public Button buttonBack;
 
-    /** Returns to the Main Menu screen */
+    /** Returns to the Main Menu screen. */
     public void returnToMainMenu() throws Exception {
         stage = Main.getPrimaryStage();
 

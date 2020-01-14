@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="230.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.OverviewSelectionScreenController">
+    <children>
+        <ImageView fitHeight="111.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <image>
+                <!--            <Image url="@/img/netflix-statistix-logo.png" />-->
+            </image></ImageView>
+      <HBox alignment="BOTTOM_CENTER" />
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="307.0" text="Hover over one of the buttons to see the overview details." textFill="WHITE" />
+        <HBox alignment="CENTER" prefHeight="22.0" prefWidth="600.0" spacing="20.0">
+            <children>
+                <Button fx:id="buttonOverview1" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#showOverview1" text="Overview 1">
+                    <tooltip>
+                        <Tooltip text="Voor een geselecteerde serie, geef per aflevering het gemiddeld bekeken percentage van de totale tijdsduur." />
+                    </tooltip></Button>
+                <Button fx:id="buttonOverview2" mnemonicParsing="false" onAction="#showOverview2" text="Overview 2">
+                    <tooltip>
+                        <Tooltip text="Voor een geselecteerde account en serie, geef per aflevering het gemiddeld bekeken percentage van de totale tijdsduur." />
+                    </tooltip></Button>
+                <Button fx:id="buttonOverview3" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showOverview3" text="Overview 3">
+                    <tooltip>
+                        <Tooltip text="Voor een geselecteerd account, geef welke films er bekeken zijn." />
+                    </tooltip></Button>
+                <Button fx:id="buttonOverview4" mnemonicParsing="false" onAction="#showOverview4" text="Overview 4">
+                    <tooltip>
+                        <Tooltip text="Geef de film voor kijkers onder 16 jaar met de langste tijdsduur." />
+                    </tooltip></Button>
+                <Button fx:id="buttonOverview5" mnemonicParsing="false" onAction="#showOverview5" text="Overview 5">
+                    <tooltip>
+                        <Tooltip text="Geef alle accounts met slechts 1 profiel." />
+                    </tooltip></Button>
+                <Button fx:id="buttonOverview6" mnemonicParsing="false" onAction="#showOverview6" text="Overview 6">
+                    <tooltip>
+                        <Tooltip text="Voor een geselecteerde film, geef hoeveel kijkers deze in z'n geheel bekeken hebben." />
+                    </tooltip></Button>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </HBox>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="60.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonBack" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#returnToMainMenu" text="Back" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </VBox.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <padding>
+        <Insets top="20.0" />
+    </padding>
+
+</VBox>

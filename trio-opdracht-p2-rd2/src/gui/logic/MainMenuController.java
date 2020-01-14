@@ -30,7 +30,6 @@ public class MainMenuController {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/ProfilesScreen.fxml"));
 
         stage.setScene(new Scene(root));
-
     }
 
     /** Shows the Watched Programs screen. */
@@ -40,8 +39,14 @@ public class MainMenuController {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/WatchedProgramsScreen.fxml"));
 
         stage.setScene(new Scene(root));
-
-
     }
 
+    /** Shows the Overview Selection screen. */
+    public void showOverviewSelectionScreen() throws Exception {
+        stage = Main.getPrimaryStage();
+
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/fxml/OverviewSelectionScreen.fxml"));
+
+        stage.setScene(new Scene(root));
+    }
 }

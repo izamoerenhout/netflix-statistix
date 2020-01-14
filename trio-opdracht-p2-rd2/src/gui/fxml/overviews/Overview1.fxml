@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.overviewControllers.Overview1Controller">
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <Label text="Select a series:" textFill="WHITE" />
+      <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
+      <HBox prefHeight="295.0" prefWidth="560.0">
+         <VBox.margin>
+            <Insets top="25.0" />
+         </VBox.margin>
+         <children>
+            <TableView fx:id="tableOverview1" prefHeight="293.0" prefWidth="566.0">
+              <columns>
+                <TableColumn fx:id="col_progId" prefWidth="93.0" text="Program id" />
+                <TableColumn fx:id="col_epNr" prefWidth="96.5" text="Episode nr" />
+                  <TableColumn fx:id="col_epName" prefWidth="287.5" text="Episode name" />
+                  <TableColumn fx:id="col_avgPctWatched" minWidth="6.0" prefWidth="81.0" text="Avg % watched" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+
+</VBox>
