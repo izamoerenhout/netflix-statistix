@@ -13,20 +13,28 @@
     </padding>
    <children>
       <Label text="Select a series:" textFill="WHITE" />
-      <ComboBox fx:id="comboBox" prefWidth="150.0" />
-      <HBox prefHeight="295.0" prefWidth="560.0">
+      <ComboBox fx:id="comboBox" onAction="#populateTableView" prefWidth="150.0" />
+      <HBox prefHeight="320.0" prefWidth="560.0">
          <VBox.margin>
             <Insets top="25.0" />
          </VBox.margin>
          <children>
-            <TableView fx:id="tableOverview1" prefHeight="293.0" prefWidth="566.0">
+            <TableView fx:id="tableOverview1" prefHeight="257.0" prefWidth="560.0">
               <columns>
                 <TableColumn fx:id="col_progId" prefWidth="93.0" text="Program id" />
                 <TableColumn fx:id="col_epNr" prefWidth="96.5" text="Episode nr" />
-                  <TableColumn fx:id="col_epName" prefWidth="287.5" text="Episode name" />
-                  <TableColumn fx:id="col_avgPctWatched" minWidth="6.0" prefWidth="81.0" text="Avg % watched" />
+                  <TableColumn fx:id="col_epName" prefWidth="249.5" text="Episode name" />
+                  <TableColumn fx:id="col_avgPctWatched" minWidth="6.0" prefWidth="119.0" text="Avg % watched" />
               </columns>
             </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="560.0">
+         <VBox.margin>
+            <Insets top="25.0" />
+         </VBox.margin>
+         <children>
+            <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToOverviewSelectionScreen" text="Back" />
          </children>
       </HBox>
    </children>

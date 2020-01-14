@@ -1,8 +1,6 @@
 package database.dao.overviewDAOs;
 
-import appLogic.Account;
 import appLogic.overviewModelObjects.Overview1;
-import appLogic.overviewModelObjects.SeriesTitle;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -76,7 +74,10 @@ public class Overview1DAO {
         return recordList;
     }
 
-    /** Retrieves all series titles from the database. */
+    /** Retrieves all series titles from the database.
+     *
+     * @return ObservableList of all series titles found in the database.
+     */
     public ObservableList<String> getAllSeriesTitles() {
         // Instantiate seriesTitleList.
         ObservableList<String> seriesTitleList = FXCollections.observableArrayList();
