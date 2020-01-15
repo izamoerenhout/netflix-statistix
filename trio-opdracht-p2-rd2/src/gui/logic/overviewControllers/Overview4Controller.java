@@ -37,7 +37,7 @@ public class Overview4Controller implements Initializable {
         stage.setScene(new Scene(root));
     }
 
-    /** Every time this scene is shown, populateTableView will be called and populates the ComboBox with the longest
+    /** Every time this scene is shown, populateTableView will be called and populates the TableView with the longest
      * movie with an age rating below 16. */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,7 +48,7 @@ public class Overview4Controller implements Initializable {
     public void populateTableView() {
         Overview4DAO overview4DAO = new Overview4DAO(new DatabaseConnector());
 
-        try{
+        try {
             // Set attributes to TableView columns.
             col_progId.setCellValueFactory(new PropertyValueFactory<>("programId"));
             col_movieName.setCellValueFactory(new PropertyValueFactory<>("movieName"));

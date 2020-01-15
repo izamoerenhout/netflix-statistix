@@ -12,7 +12,7 @@ import java.sql.Statement;
 public class WatchedProgramDAO {
     private DatabaseConnector databaseConnector;
 
-    /** Constructor class.
+    /** Class constructor.
      *
      * @param databaseConnector Instantiates a new Database Connector.
      */

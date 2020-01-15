@@ -15,7 +15,7 @@ import java.sql.Time;
 public class Overview4DAO {
     private DatabaseConnector databaseConnector;
 
-    /** Constructor class.
+    /** Class constructor.
      *
      * @param databaseConnector Instantiates a new Database Connector.
      */

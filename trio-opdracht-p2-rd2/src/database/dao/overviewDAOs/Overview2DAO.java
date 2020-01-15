@@ -12,9 +12,9 @@ import java.sql.Statement;
 public class Overview2DAO {
     private DatabaseConnector databaseConnector;
 
-    /** Constructor class.
+    /** Class constructor.
      *
-     * @param databaseConnector
+     * @param databaseConnector Instantiates a new database connector.
      */
     public Overview2DAO(DatabaseConnector databaseConnector) {
         this.databaseConnector = databaseConnector;

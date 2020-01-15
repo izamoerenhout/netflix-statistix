@@ -13,7 +13,7 @@ import java.sql.Statement;
 public class Overview1DAO {
     private DatabaseConnector databaseConnector;
 
-    /** Constructor class.
+    /** Class constructor.
      *
      * @param databaseConnector Instantiates a new Database Connector.
      */
