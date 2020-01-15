@@ -100,12 +100,20 @@ public class WatchedProgramsScreenController implements Initializable {
             success.setContentText("Watched program has been added successfully.");
             success.show();
             populateTableView();
+            emailInput.clear();
+            profileNameInput.clear();
+            programIdInput.clear();
+            pctWatchedInput.clear();
         } else {
             Alert failed = new Alert(Alert.AlertType.WARNING);
             failed.setTitle("Watched program creation failed");
             failed.setHeaderText(null);
             failed.setContentText("Failed to add watched program.");
             failed.show();
+            emailInput.clear();
+            profileNameInput.clear();
+            programIdInput.clear();
+            pctWatchedInput.clear();
         }
     }
 
