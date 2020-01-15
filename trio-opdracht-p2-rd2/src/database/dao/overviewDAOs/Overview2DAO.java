@@ -20,6 +20,12 @@ public class Overview2DAO {
         this.databaseConnector = databaseConnector;
     }
 
+    /** Retrieves a list of all records from the database.
+     *
+     * @param seriesTitle The series that has been selected from the ComboBox.
+     * @param accountEmail The account email that has been selected from the ComboBox.
+     * @return ObservableList containing all records from the database as Overview2 objects.
+     */
     public ObservableList<Overview2> getAllRecords(String seriesTitle, String accountEmail) {
         // Instantiate recordList.
         ObservableList<Overview2> recordList = FXCollections.observableArrayList();
@@ -72,6 +78,10 @@ public class Overview2DAO {
         return recordList;
     }
 
+    /** Retrieves all series titles from the database.
+     *
+     * @return ObservableList containing all series titles from the database as Strings.
+     */
     public ObservableList<String> getAllSeriesTitles() {
         // Instantiate seriesTitleList.
         ObservableList<String> seriesTitleList = FXCollections.observableArrayList();
@@ -108,6 +118,10 @@ public class Overview2DAO {
         return seriesTitleList;
     }
 
+    /** Retrieves all account emails from the database.
+     *
+     * @return ObservableList containing all account emails as Strings.
+     */
     public ObservableList<String> getAllAccountEmails() {
         // Instantiate seriesTitleList.
         ObservableList<String> accountEmailList = FXCollections.observableArrayList();

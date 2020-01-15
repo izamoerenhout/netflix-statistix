@@ -4,7 +4,6 @@ import appLogic.overviewModelObjects.Overview3;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -21,7 +20,11 @@ public class Overview3DAO {
         this.databaseConnector = databaseConnector;
     }
 
-
+    /** Retrieves all records from the database.
+     *
+     * @param accountEmail The account's email address, which will be put into the WHERE clause.
+     * @return ObservableList containing all records as Overview3 objects.
+     */
     public ObservableList<Overview3> getAllRecords(String accountEmail) {
         // Instantiate recordList.
         ObservableList<Overview3> recordList = FXCollections.observableArrayList();
@@ -69,6 +72,10 @@ public class Overview3DAO {
         return recordList;
     }
 
+    /** Retrieves the email addresses of all accounts from the database.
+     *
+     * @return ObservableList containing all account's email addresses as Strings.
+     */
     public ObservableList<String> getAllAccountEmails() {
         // Instantiate seriesTitleList.
         ObservableList<String> accountEmailList = FXCollections.observableArrayList();

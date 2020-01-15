@@ -14,7 +14,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,6 +21,7 @@ import java.util.ResourceBundle;
 public class Overview3Controller implements Initializable {
     public Stage stage;
     public Button buttonBack;
+
     public ComboBox<String> comboBox;
 
     public TableView<Overview3> tableOverview3;
@@ -30,7 +30,7 @@ public class Overview3Controller implements Initializable {
     public TableColumn<Overview3, Integer> col_programId;
     public TableColumn<Overview3, String> col_movieName;
 
-    /** Returns to the Overview Selection screen */
+    /** Returns to the Overview Selection screen. */
     public void returnToOverviewSelectionScreen() throws Exception {
         stage = Main.getPrimaryStage();
 
@@ -45,11 +45,13 @@ public class Overview3Controller implements Initializable {
         populateComboBox();
     }
 
+    /** Calls getAllAccountEmails from Overview3DAO and fills the ComboBox with all account emails from the database. */
     private void populateComboBox() {
         Overview3DAO overview3DAO = new Overview3DAO(new DatabaseConnector());
         comboBox.setItems(overview3DAO.getAllAccountEmails());
     }
 
+    /** Populates the TableView with all records from the database depending on the selected account. */
     public void populateTableView() {
         Overview3DAO overview3DAO = new Overview3DAO(new DatabaseConnector());
 

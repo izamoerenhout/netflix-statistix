@@ -1,6 +1,6 @@
 package appLogic;
 
-/** Model Object for the Accounts screen. */
+/** Model Object for the Accounts screen and Overview 5. */
 public class Account {
     private String email;
     private String name;

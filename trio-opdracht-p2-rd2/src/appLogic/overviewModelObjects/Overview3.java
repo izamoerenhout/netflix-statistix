@@ -9,10 +9,10 @@ public class Overview3 {
 
     /** Class constructor.
      *
-     * @param email
-     * @param profileName
-     * @param programId
-     * @param movieName
+     * @param email The account's email address.
+     * @param profileName The name of the profile that has watched the movie.
+     * @param programId The watched movie's program id.
+     * @param movieName The name of the movie.
      */
     public Overview3(String email, String profileName, int programId, String movieName) {
         this.email = email;
