@@ -1,9 +1,7 @@
 package gui.logic.overviewControllers;
 
 import appLogic.overviewModelObjects.Overview1;
-import appLogic.overviewModelObjects.SeriesTitle;
 import database.DatabaseConnector;
-import database.dao.AccountDAO;
 import database.dao.overviewDAOs.Overview1DAO;
 import gui.Main;
 import javafx.fxml.FXMLLoader;

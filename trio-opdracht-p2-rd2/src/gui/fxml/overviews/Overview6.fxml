@@ -1,40 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="230.0" prefWidth="600.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.overviewControllers.Overview6Controller">
-    <children>
-        <ImageView fitHeight="111.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
-            <cursor>
-                <Cursor fx:constant="DEFAULT" />
-            </cursor>
-            <image>
-                <!--            <Image url="@/img/netflix-statistix-logo.png" />-->
-            </image></ImageView>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
-            <children>
-                <Button fx:id="buttonAccounts" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#showAccountsScreen" text="Accounts" />
-                <Button fx:id="buttonProfiles" mnemonicParsing="false" onAction="#showProfilesScreen" text="Profiles" />
-                <Button fx:id="buttonWatched" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showWatchedProgramsScreen" text="Watched programs" />
-                <Button fx:id="buttonOverviews" mnemonicParsing="false" onAction="#showOverviewSelectionScreen" text="Overviews" />
-            </children>
-            <opaqueInsets>
-                <Insets />
-            </opaqueInsets>
-            <VBox.margin>
-                <Insets />
-            </VBox.margin>
-        </HBox>
-    </children>
+<VBox prefHeight="211.0" prefWidth="487.0" style="-fx-background-color: rgb(86,77,77);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.logic.overviewControllers.Overview6Controller">
     <opaqueInsets>
         <Insets />
     </opaqueInsets>
     <padding>
-        <Insets top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
+    <Label text="Select a movie:" textFill="WHITE" />
+    <ComboBox fx:id="comboBox" onAction="#populateTableView" prefHeight="31.0" prefWidth="246.0" />
+    <HBox prefHeight="244.0" prefWidth="508.0">
+        <VBox.margin>
+            <Insets top="25.0" />
+        </VBox.margin>
+        <TableView fx:id="tableOverview6" prefHeight="206.0" prefWidth="448.0">
+            <columns>
+                <TableColumn fx:id="col_progId" prefWidth="114.0" text="Program id" />
+                <TableColumn fx:id="col_movieName" prefWidth="205.0" text="Movie name" />
+                <TableColumn fx:id="col_amountOfViewers" prefWidth="124.0" text="Amount of viewers" />
+            </columns>
+        </TableView>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="560.0">
+        <VBox.margin>
+            <Insets top="25.0" />
+        </VBox.margin>
+        <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#returnToOverviewSelectionScreen" text="Back" />
+    </HBox>
 </VBox>

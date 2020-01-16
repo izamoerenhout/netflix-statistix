@@ -55,7 +55,7 @@ public class Overview3Controller implements Initializable {
     public void populateTableView() {
         Overview3DAO overview3DAO = new Overview3DAO(new DatabaseConnector());
 
-        try{
+        try {
             // Set attributes to TableView columns.
             col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
             col_profileName.setCellValueFactory(new PropertyValueFactory<>("profileName"));

@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb009071-205b-407d-a4c5-71d0e834fe73" name="Default Changelist" comment="overview 5 compleet">
+    <list default="true" id="bb009071-205b-407d-a4c5-71d0e834fe73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/AccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/ProfileDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/ProfileDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/WatchedProgramDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/WatchedProgramDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview1DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview1DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview2DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview2DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview3DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview3DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview4DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview4DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview5DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview5DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview3.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview5.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview4Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview4Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview5Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview5Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/appLogic/overviewModelObjects/Overview6.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/appLogic/overviewModelObjects/Overview6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/appLogic/overviewModelObjects/SeriesTitle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview6DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview6DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview6.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview6.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview1Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview3Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview3Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview6Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview6Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579110805649</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="overview 5 compleet">
+      <created>1579112026443</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579112026443</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -147,53 +149,53 @@
     <option name="LAST_COMMIT_MESSAGE" value="overview 5 compleet" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579111103368">
+    <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579177277401">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1500.960@0.0.1500.960" timestamp="1579111103368" />
+    <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1500.960@0.0.1500.960" timestamp="1579177277401" />
     <state x="206" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578937013922">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="206" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1578937013922" />
-    <state x="556" y="165" key="#com.intellij.ide.util.MemberChooser" timestamp="1579110834754">
+    <state x="556" y="165" key="#com.intellij.ide.util.MemberChooser" timestamp="1579177134281">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="556" y="165" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1579110834754" />
+    <state x="556" y="165" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1579177134281" />
     <state x="481" y="228" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579007522288">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="481" y="228" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.960@0.0.1500.960" timestamp="1579007522288" />
-    <state x="367" y="75" key="CommitChangelistDialog2" timestamp="1579111909145">
+    <state x="367" y="75" key="CommitChangelistDialog2" timestamp="1579112024746">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="367" y="75" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1579111909145" />
+    <state x="367" y="75" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1579112024746" />
     <state x="424" y="196" key="FileChooserDialogImpl" timestamp="1578579015963">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="424" y="196" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1578579015963" />
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1579111954492">
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1579179512986">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1579111954492" />
-    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1579111954492">
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1579179512986" />
+    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1579179512986">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1579111954492" />
-    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1579111954492">
+    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1579179512986" />
+    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1579179512985">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1579111954492" />
-    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1579111954492">
+    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1579179512985" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1579179512986">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1579111954492" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1579179512986" />
     <state x="231" y="55" key="SettingsEditor" timestamp="1578579032882">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="231" y="55" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1578579032882" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1579110808018">
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1579112029757">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1579110808018" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1579112029757" />
   </component>
 </project>
