@@ -1,7 +1,7 @@
 package appLogic;
 
 /** Model Object for the Accounts screen. */
-public class Watched_Program {
+public class WatchedProgram {
     private String email;
     private String accountName;
     private String profileName;
@@ -16,7 +16,7 @@ public class Watched_Program {
      * @param programId The id of the program that was watched.
      * @param pctWatched The percentage the user has watched.
      */
-    public Watched_Program(String email, String accountName, String profileName, int programId, int pctWatched) {
+    public WatchedProgram(String email, String accountName, String profileName, int programId, int pctWatched) {
         this.email = email;
         this.accountName = accountName;
         this.profileName = profileName;

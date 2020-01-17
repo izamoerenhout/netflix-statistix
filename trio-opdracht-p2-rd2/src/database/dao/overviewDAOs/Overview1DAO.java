@@ -35,7 +35,8 @@ public class Overview1DAO {
 
         try {
             // Form an SQL query.
-            String query = String.format("SELECT watched_program.program_id, episode.episode_nr, program.program_name AS 'episode_name', AVG(watched_program.pct_watched) AS 'avg_pct_watched' " +
+            String query = String.format("SELECT watched_program.program_id, episode.episode_nr, " +
+                            "program.program_name AS 'episode_name', AVG(watched_program.pct_watched) AS 'avg_pct_watched' " +
                     "FROM watched_program " +
                     "JOIN episode " +
                     "ON episode.program_id = watched_program.program_id " +

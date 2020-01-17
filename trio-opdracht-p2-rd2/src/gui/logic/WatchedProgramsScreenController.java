@@ -1,6 +1,6 @@
 package gui.logic;
 
-import appLogic.Watched_Program;
+import appLogic.WatchedProgram;
 import database.DatabaseConnector;
 import database.dao.WatchedProgramDAO;
 import gui.Main;
@@ -26,12 +26,12 @@ public class WatchedProgramsScreenController implements Initializable {
     public TextField programIdInput;
     public TextField pctWatchedInput;
 
-    public TableView<Watched_Program> tableWatched;
-    public TableColumn<Watched_Program, String> col_email;
-    public TableColumn<Watched_Program, String> col_accountName;
-    public TableColumn<Watched_Program, String> col_profileName;
-    public TableColumn<Watched_Program, Integer> col_programId;
-    public TableColumn<Watched_Program, Integer> col_pctWatched;
+    public TableView<WatchedProgram> tableWatched;
+    public TableColumn<WatchedProgram, String> col_email;
+    public TableColumn<WatchedProgram, String> col_accountName;
+    public TableColumn<WatchedProgram, String> col_profileName;
+    public TableColumn<WatchedProgram, Integer> col_programId;
+    public TableColumn<WatchedProgram, Integer> col_pctWatched;
 
     public Button buttonAdd;
     public Button buttonDelete;
@@ -118,9 +118,9 @@ public class WatchedProgramsScreenController implements Initializable {
     }
 
     /** Calls updateWatchedProgramId from WatchedProgramDAO and updates the program id of an existing watched program in the database. */
-    public void onEditUpdateWatchedProgramId(TableColumn.CellEditEvent<Watched_Program, Integer> watchedProgramIntegerCellEditEvent) {
+    public void onEditUpdateWatchedProgramId(TableColumn.CellEditEvent<WatchedProgram, Integer> watchedProgramIntegerCellEditEvent) {
         // Store current program id name in variable.
-        Watched_Program watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
+        WatchedProgram watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
         int currentProgramId = watchedProgram.getProgramId();
 
         // Update value of cell in TableView to new value entered by user.
@@ -144,9 +144,9 @@ public class WatchedProgramsScreenController implements Initializable {
     }
 
     /** Calls updateWatchedProgramPctWatched from WatchedProgramDAO and updates the percentage watched of an existing watched program in the database. */
-    public void onEditUpdateWatchedProgramPctWatched(TableColumn.CellEditEvent<Watched_Program, Integer> watchedProgramIntegerCellEditEvent) {
+    public void onEditUpdateWatchedProgramPctWatched(TableColumn.CellEditEvent<WatchedProgram, Integer> watchedProgramIntegerCellEditEvent) {
         // Update value of cell in TableView to new value entered by user.
-        Watched_Program watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
+        WatchedProgram watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
         watchedProgram.setPctWatched(watchedProgramIntegerCellEditEvent.getNewValue());
 
         // Update value in the database.
@@ -167,7 +167,7 @@ public class WatchedProgramsScreenController implements Initializable {
 
     /** Calls deleteWatchedProgram from WatchedProgramDAO and deleted an existing watched program from the database. */
     public void deleteWatchedProgram() {
-        Watched_Program watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
+        WatchedProgram watchedProgram = tableWatched.getSelectionModel().getSelectedItem();
 
         WatchedProgramDAO watchedProgramDAO = new WatchedProgramDAO(new DatabaseConnector());
         boolean successful = watchedProgramDAO.deleteWatchedProgram(watchedProgram.getEmail(), watchedProgram.getProfileName(),

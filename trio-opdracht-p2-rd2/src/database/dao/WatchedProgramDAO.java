@@ -1,6 +1,6 @@
 package database.dao;
 
-import appLogic.Watched_Program;
+import appLogic.WatchedProgram;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,9 +24,9 @@ public class WatchedProgramDAO {
      *
      * @return ObservableList that will be stored in a TableView.
      */
-    public ObservableList<Watched_Program> getAllWatchedPrograms() {
+    public ObservableList<WatchedProgram> getAllWatchedPrograms() {
         // Instantiate watchedProgramList.
-        ObservableList<Watched_Program> watchedProgramList = FXCollections.observableArrayList();
+        ObservableList<WatchedProgram> watchedProgramList = FXCollections.observableArrayList();
 
         // Connect to the database.
         Connection connection = databaseConnector.getConnection();
@@ -44,7 +44,7 @@ public class WatchedProgramDAO {
             // Execute the query. The result of the query will be stored in this variable.
             ResultSet resultSet = statement.executeQuery(query);
 
-            //Iterate through ResultSet, put data into new Watched_Program object and add to list.
+            //Iterate through ResultSet, put data into new WatchedProgram object and add to list.
             while (resultSet.next()) {
                 String email = resultSet.getString("email");
                 String accountName = resultSet.getString("name");
@@ -52,7 +52,7 @@ public class WatchedProgramDAO {
                 int programId = resultSet.getInt("program_id");
                 int pctWatched = resultSet.getInt("pct_watched");
 
-                watchedProgramList.add(new Watched_Program(email, accountName, profileName, programId, pctWatched));
+                watchedProgramList.add(new WatchedProgram(email, accountName, profileName, programId, pctWatched));
             }
         } catch (Exception e) {
             e.printStackTrace();
