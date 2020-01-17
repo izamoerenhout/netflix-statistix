@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03cb7c7f-8d90-48fc-8244-5d61ee7c44c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview3Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview4Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview3Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,19 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview3Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2090">
-              <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+            <state relative-caret-position="221">
+              <caret line="82" column="4" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="101" selection-end-column="5" />
               <folding>
                 <element signature="e#447#448#0" expanded="true" />
                 <element signature="e#485#486#0" expanded="true" />
@@ -37,20 +28,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview2Test.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview4Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1496">
-              <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="330">
+              <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
+              <folding>
+                <element signature="e#470#471#0" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/appLogicTest/WatchedProgramTest.java">
+        <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="83" column="4" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="102" selection-end-column="5" />
+            <state relative-caret-position="110">
+              <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -86,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/gui/Test.java" />
         <option value="$PROJECT_DIR$/src/gui/Main.java" />
         <option value="$PROJECT_DIR$/src/gui/MainMenuController.java" />
@@ -137,6 +131,7 @@
         <option value="$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview2.java" />
         <option value="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview2Test.java" />
         <option value="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview3Test.java" />
+        <option value="$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview4Test.java" />
       </list>
     </option>
   </component>
@@ -210,7 +205,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579295244224" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579297410517" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="C:/Program Files/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar!/" />
@@ -252,14 +247,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Overview3Test">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="trio-opdracht-p2-rd2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.WatchedProgramTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.Main" />
       <module name="trio-opdracht-p2-rd2" />
@@ -274,16 +262,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Overview1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trio-opdracht-p2-rd2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="appLogicTest.overviewModelObjectsTest.*" />
+          <option name="PATTERN" value="appLogicTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="appLogicTest.overviewModelObjectsTest" />
-      <option name="MAIN_CLASS_NAME" value="appLogicTest.overviewModelObjectsTest.Overview1Test" />
+      <option name="PACKAGE_NAME" value="appLogicTest" />
+      <option name="MAIN_CLASS_NAME" value="appLogicTest.AccountTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -319,6 +307,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProfileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="trio-opdracht-p2-rd2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="appLogicTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="appLogicTest" />
+      <option name="MAIN_CLASS_NAME" value="appLogicTest.ProfileTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WatchedProgramTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="trio-opdracht-p2-rd2" />
       <extension name="coverage">
@@ -337,19 +340,19 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.trio-opdracht-p2-rd2" />
-      <item itemvalue="JUnit.WatchedProgramTest" />
-      <item itemvalue="Application.Main (1)" />
-      <item itemvalue="JUnit.Overview1Test" />
       <item itemvalue="JUnit.Overview2Test" />
       <item itemvalue="JUnit.Overview3Test" />
+      <item itemvalue="JUnit.AccountTest" />
+      <item itemvalue="JUnit.ProfileTest" />
+      <item itemvalue="JUnit.WatchedProgramTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WatchedProgramTest" />
+        <item itemvalue="JUnit.ProfileTest" />
+        <item itemvalue="JUnit.AccountTest" />
         <item itemvalue="JUnit.Overview3Test" />
         <item itemvalue="JUnit.Overview2Test" />
-        <item itemvalue="JUnit.Overview1Test" />
-        <item itemvalue="JUnit.WatchedProgramTest" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -602,13 +605,17 @@
       <option name="project" value="LOCAL" />
       <updated>1579294041158</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="implementatie overview3test">
+      <created>1579295259828</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1579295259828</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ProfileTest - 2020.01.17 at 19h 35m 51s.xml">
-      <configuration name="ProfileTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WatchedProgramTest - 2020.01.17 at 20h 15m 49s.xml">
       <configuration name="WatchedProgramTest" configurationId="JUnit" />
     </history-entry>
@@ -636,6 +643,9 @@
     <history-entry file="Overview2Test - 2020.01.17 at 21h 46m 03s.xml">
       <configuration name="Overview2Test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Overview3Test - 2020.01.17 at 22h 07m 27s.xml">
+      <configuration name="Overview3Test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -650,7 +660,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18230277" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18230277" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -659,7 +669,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32719395" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -681,7 +691,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Experimentatie." />
     <MESSAGE value="Maken Account en Profile object." />
     <MESSAGE value="Maken backend objects." />
     <MESSAGE value="GUI maken" />
@@ -706,11 +715,10 @@
     <MESSAGE value="implementatie watchedprogramtest" />
     <MESSAGE value="implementatie overview1test" />
     <MESSAGE value="implementatie overview2test" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementatie overview2test" />
+    <MESSAGE value="implementatie overview3test" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementatie overview3test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/appLogic/Movie.java" />
-    <entry file="file://$PROJECT_DIR$/src/appLogic/Program.java" />
     <entry file="file://$PROJECT_DIR$/src/appLogic/Episode.java" />
     <entry file="file://$PROJECT_DIR$/src/appLogic/Series.java" />
     <entry file="jar://C:/Program Files/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar!/com/microsoft/sqlserver/jdbc/SQLServerDriver.class" />
@@ -904,13 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview1Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2002">
@@ -985,13 +986,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview3Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2090">
-          <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+        <state relative-caret-position="221">
+          <caret line="82" column="4" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="101" selection-end-column="5" />
           <folding>
             <element signature="e#447#448#0" expanded="true" />
             <element signature="e#485#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/appLogicTest/overviewModelObjectsTest/Overview4Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
+          <folding>
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
           </folding>
         </state>
       </provider>
