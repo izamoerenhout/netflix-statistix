@@ -105,7 +105,7 @@ class Overview1Test {
     void setAvgPctWatchedWithInputAbove100ReturnsIllegalArgumentException() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> testOverview1.setAvgPctWatched(105));
 
-        String expectedMessage = "Average percentage watched has to be between 0 and 100.";
+        String expectedMessage = "Average percentage watched should be between 0 and 100.";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
@@ -115,7 +115,7 @@ class Overview1Test {
     void setAvgPctWatchedWithNegativeInputReturnsIllegalArgumentException() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> testOverview1.setAvgPctWatched(-5));
 
-        String expectedMessage = "Average percentage watched has to be between 0 and 100.";
+        String expectedMessage = "Average percentage watched should be between 0 and 100.";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
