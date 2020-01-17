@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03cb7c7f-8d90-48fc-8244-5d61ee7c44c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/appLogicTest/WatchedProgramTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/appLogic/overviewModelObjects/Overview1Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/trio-opdracht-p2-rd2/appLogic/Watched_Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appLogic/WatchedProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appLogic/WatchedProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/appLogicTest/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/appLogicTest/AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/appLogicTest/ProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/appLogicTest/ProfileTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,32 +17,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/appLogic/WatchedProgram.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/appLogic/overviewModelObjects/Overview1Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
-              <caret line="69" column="95" selection-start-line="69" selection-start-column="95" selection-end-line="69" selection-end-column="95" />
+            <state relative-caret-position="397">
+              <caret line="115" column="129" selection-start-line="115" selection-start-column="129" selection-end-line="115" selection-end-column="129" />
               <folding>
-                <element signature="e#1158#1159#0" expanded="true" />
-                <element signature="e#1234#1235#0" expanded="true" />
-                <element signature="e#1306#1307#0" expanded="true" />
-                <element signature="e#1406#1407#0" expanded="true" />
-                <element signature="e#1478#1479#0" expanded="true" />
-                <element signature="e#1578#1579#0" expanded="true" />
-                <element signature="e#1643#1644#0" expanded="true" />
-                <element signature="e#1641#1642#0" expanded="true" />
-                <element signature="e#1683#1684#0" expanded="true" />
-                <element signature="e#1799#1800#0" expanded="true" />
+                <element signature="e#366#367#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/appLogicTest/WatchedProgramTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+            <state relative-caret-position="67">
+              <caret line="127" column="8" lean-forward="true" selection-start-line="127" selection-start-column="8" selection-end-line="132" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -52,8 +45,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -77,8 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/database/ProgramDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/SeriesDAO.java" />
         <option value="$PROJECT_DIR$/src/database/WatchedDAO.java" />
         <option value="$PROJECT_DIR$/src/gui/MainMenu.fxml" />
         <option value="$PROJECT_DIR$/src/Test.java" />
@@ -123,11 +114,13 @@
         <option value="$PROJECT_DIR$/src/gui/fxml/overviews/Overview3.fxml" />
         <option value="$PROJECT_DIR$/src/database/DatabaseConnector.java" />
         <option value="$PROJECT_DIR$/src/database/dao/overviewDAOs/Overview1DAO.java" />
-        <option value="$PROJECT_DIR$/test/appLogicTest/AccountTest.java" />
-        <option value="$PROJECT_DIR$/test/appLogicTest/ProfileTest.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/appLogic/WatchedProgram.java" />
         <option value="$PROJECT_DIR$/test/appLogicTest/WatchedProgramTest.java" />
+        <option value="$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview1.java" />
+        <option value="$PROJECT_DIR$/test/appLogicTest/AccountTest.java" />
+        <option value="$PROJECT_DIR$/test/appLogicTest/ProfileTest.java" />
+        <option value="$PROJECT_DIR$/test/appLogic/overviewModelObjects/Overview1Test.java" />
       </list>
     </option>
   </component>
@@ -166,6 +159,13 @@
             <path>
               <item name="trio-opdracht-p2-rd2" type="b2602c69:ProjectViewProjectNode" />
               <item name="trio-opdracht-p2-rd2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="appLogic" type="462c0819:PsiDirectoryNode" />
+              <item name="overviewModelObjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trio-opdracht-p2-rd2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trio-opdracht-p2-rd2" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -187,7 +187,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579291946374" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579293247522" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="C:/Program Files/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar!/" />
@@ -198,6 +198,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="appLogic.overviewModelObjects" />
       <recent name="appLogicTest" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -227,7 +228,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WatchedProgramTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="trio-opdracht-p2-rd2" />
@@ -550,13 +551,17 @@
       <option name="project" value="LOCAL" />
       <updated>1579286344294</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="implementatie watchedprogramtest">
+      <created>1579292061623</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1579292061623</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AccountTest_testGetEmailWithInputStefanJaspersAtHotmailDotComReturnsStefanJaspersAtHotmailDotCom - 2020.01.17 at 19h 12m 28s.xml">
-      <configuration name="AccountTest.testGetEmailWithInputStefanJaspersAtHotmailDotComReturnsStefanJaspersAtHotmailDotCom" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AccountTest - 2020.01.17 at 19h 12m 37s.xml">
       <configuration name="AccountTest" configurationId="JUnit" />
     </history-entry>
@@ -584,6 +589,9 @@
     <history-entry file="WatchedProgramTest - 2020.01.17 at 21h 02m 30s.xml">
       <configuration name="WatchedProgramTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WatchedProgramTest - 2020.01.17 at 21h 12m 30s.xml">
+      <configuration name="WatchedProgramTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +606,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18230277" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18230277" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -607,7 +615,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32719395" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -652,10 +660,10 @@
     <MESSAGE value="rondkutten" />
     <MESSAGE value="Overview2 werkend" />
     <MESSAGE value="maken accounttest en profiletest" />
-    <option name="LAST_COMMIT_MESSAGE" value="maken accounttest en profiletest" />
+    <MESSAGE value="implementatie watchedprogramtest" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementatie watchedprogramtest" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PATH_TO_FX$/javafx.graphics.jar!/javafx/application/Application.class" />
     <entry file="jar://$PATH_TO_FX$/javafx.base.jar!/javafx/event/EventHandler.class" />
     <entry file="file://$PROJECT_DIR$/src/GUI/AccountsScreen.java" />
     <entry file="file://$PROJECT_DIR$/src/appLogic/Movie.java" />
@@ -752,7 +760,6 @@
     <entry file="file://$PROJECT_DIR$/src/gui/fxml/overviews/Overview2.fxml" />
     <entry file="file://$PROJECT_DIR$/src/gui/logic/overviewControllers/Overview2Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview3.java" />
-    <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview1.java" />
     <entry file="file://$PROJECT_DIR$/src/database/dao/overviewDAOs/Overview2DAO.java" />
     <entry file="file://$PROJECT_DIR$/src/gui/fxml/overviews/Overview1.fxml" />
     <entry file="file://$PROJECT_DIR$/src/database/dao/overviewDAOs/Overview3DAO.java" />
@@ -829,20 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/appLogicTest/AccountTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/appLogicTest/ProfileTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -869,10 +862,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/appLogicTest/WatchedProgramTest.java">
+    <entry file="file://$PROJECT_DIR$/src/appLogic/overviewModelObjects/Overview1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1342">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+          <folding>
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1526#1527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/appLogicTest/AccountTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/appLogicTest/ProfileTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/appLogicTest/WatchedProgramTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="127" column="8" lean-forward="true" selection-start-line="127" selection-start-column="8" selection-end-line="132" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/appLogic/overviewModelObjects/Overview1Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="115" column="129" selection-start-line="115" selection-start-column="129" selection-end-line="115" selection-end-column="129" />
+          <folding>
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -18,7 +18,11 @@ public class Overview1 {
         this.programId = programId;
         this.episodeNr = episodeNr;
         this.episodeName = episodeName;
-        this.avgPctWatched = avgPctWatched;
+        if (avgPctWatched < 0 || avgPctWatched > 100) {
+            throw new IllegalArgumentException("Average percentage watched should be between 0 and 100.");
+        } else {
+            this.avgPctWatched = avgPctWatched;
+        }
     }
 
     /** Getters and setters. */
@@ -51,6 +55,10 @@ public class Overview1 {
     }
 
     public void setAvgPctWatched(int avgPctWatched) {
-        this.avgPctWatched = avgPctWatched;
+        if (avgPctWatched < 0 || avgPctWatched > 100) {
+            throw new IllegalArgumentException("Average percentage watched should be between 0 and 100.");
+        } else {
+            this.avgPctWatched = avgPctWatched;
+        }
     }
 }

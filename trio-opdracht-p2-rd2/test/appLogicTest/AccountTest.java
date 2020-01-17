@@ -3,6 +3,7 @@ package appLogicTest;
 import appLogic.Account;
 import org.junit.jupiter.api.*;
 
+/** Test class for the Account model object. */
 class AccountTest {
     private Account testAccount;
 

@@ -3,6 +3,7 @@ package appLogicTest;
 import appLogic.Profile;
 import org.junit.jupiter.api.*;
 
+/** Test class for the Profile model object. */
 class ProfileTest {
     private Profile testProfile;
 
