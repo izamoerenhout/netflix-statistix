@@ -1,6 +1,7 @@
-package appLogic.overviewModelObjects;
+package appLogicTest.overviewModelObjectsTest;
 
 import appLogic.Account;
+import appLogic.overviewModelObjects.Overview1;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
