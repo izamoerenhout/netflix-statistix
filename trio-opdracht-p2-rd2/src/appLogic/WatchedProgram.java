@@ -21,7 +21,11 @@ public class WatchedProgram {
         this.accountName = accountName;
         this.profileName = profileName;
         this.programId = programId;
-        this.pctWatched = pctWatched;
+        if (pctWatched < 0 || pctWatched > 100) {
+            throw new IllegalArgumentException("Percentage watched has to be between 0 and 100.");
+        } else {
+            this.pctWatched = pctWatched;
+        }
     }
 
     /** Getters and setters. */
@@ -62,6 +66,10 @@ public class WatchedProgram {
     }
 
     public void setPctWatched(int pctWatched) {
-        this.pctWatched = pctWatched;
+        if (pctWatched < 0 || pctWatched > 100) {
+            throw new IllegalArgumentException("Percentage watched has to be between 0 and 100.");
+        } else {
+            this.pctWatched = pctWatched;
+        }
     }
 }
