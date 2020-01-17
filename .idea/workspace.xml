@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb009071-205b-407d-a4c5-71d0e834fe73" name="Default Changelist" comment="">
+    <list default="true" id="bb009071-205b-407d-a4c5-71d0e834fe73" name="Default Changelist" comment="logo op main menu en overview selection screen">
+      <change afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/resources/img/logo-netflix-statistix.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/appLogic/overviewModelObjects/Overview6.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/appLogic/overviewModelObjects/Overview6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/appLogic/overviewModelObjects/SeriesTitle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview6DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/database/dao/overviewDAOs/Overview6DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview6.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/overviews/Overview6.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview1Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview3Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview3Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview6Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/overviewControllers/Overview6Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/out/production/trio-opdracht-p2-rd2/gui/fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/out/production/trio-opdracht-p2-rd2/gui/fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/OverviewSelectionScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/fxml/OverviewSelectionScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/trio-opdracht-p2-rd2/src/gui/logic/MainMenuController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +40,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Microsoft JDBC Driver 7.4 for SQL Server/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -139,14 +138,24 @@
       <option name="project" value="LOCAL" />
       <updated>1579112026443</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="overview 6 compleet">
+      <created>1579179640387</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1579179640387</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Maken overviews" />
     <MESSAGE value="overview 4 compleet" />
     <MESSAGE value="overview 5 compleet" />
-    <option name="LAST_COMMIT_MESSAGE" value="overview 5 compleet" />
+    <MESSAGE value="overview 6 compleet" />
+    <MESSAGE value="logo op main menu en overview selection screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="logo op main menu en overview selection screen" />
   </component>
   <component name="WindowStateProjectService">
     <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579177277401">
@@ -161,41 +170,45 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="556" y="165" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1579177134281" />
+    <state x="455" y="164" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1579221370224">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="455" y="164" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1500.960@0.0.1500.960" timestamp="1579221370224" />
     <state x="481" y="228" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579007522288">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="481" y="228" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.960@0.0.1500.960" timestamp="1579007522288" />
-    <state x="367" y="75" key="CommitChangelistDialog2" timestamp="1579112024746">
+    <state x="367" y="75" key="CommitChangelistDialog2" timestamp="1579221488127">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="367" y="75" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1579112024746" />
+    <state x="367" y="75" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1579221488127" />
     <state x="424" y="196" key="FileChooserDialogImpl" timestamp="1578579015963">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="424" y="196" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1578579015963" />
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1579179512986">
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1579221501185">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1579179512986" />
-    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1579179512986">
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1579221501185" />
+    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1579221501184">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1579179512986" />
-    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1579179512985">
+    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1579221501184" />
+    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1579221501184">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1579179512985" />
-    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1579179512986">
+    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1579221501184" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1579221501184">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1579179512986" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1579221501184" />
     <state x="231" y="55" key="SettingsEditor" timestamp="1578579032882">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="231" y="55" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1578579032882" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1579112029757">
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1579179641875">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1579112029757" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1579179641875" />
   </component>
 </project>

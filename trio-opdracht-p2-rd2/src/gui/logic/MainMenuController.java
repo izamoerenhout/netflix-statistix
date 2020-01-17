@@ -9,9 +9,6 @@ import javafx.stage.Stage;
 
 /** Controller for the main menu screen */
 public class MainMenuController {
-    public Button buttonAccounts;
-    public Button buttonProfiles;
-    public Button buttonWatched;
     private Stage stage;
 
     /** Shows the Accounts screen. */
