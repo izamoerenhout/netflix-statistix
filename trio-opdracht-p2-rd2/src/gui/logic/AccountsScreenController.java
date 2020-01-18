@@ -4,7 +4,6 @@ import appLogic.Account;
 import database.dao.AccountDAO;
 import database.DatabaseConnector;
 import gui.Main;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
