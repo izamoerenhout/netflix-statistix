@@ -1,8 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="trio-opdracht-p2-rd2" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="Test.Test" />
+    <option name="MAIN_CLASS_NAME" value="gui.Main" />
     <module name="trio-opdracht-p2-rd2" />
-    <option name="VM_PARAMETERS" value="-p &quot;C:\Program Files\Java\javafx-sdk-11.0.2\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

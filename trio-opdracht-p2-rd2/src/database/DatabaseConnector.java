@@ -7,8 +7,8 @@ import java.sql.DriverManager;
 public class DatabaseConnector {
 
     /** Depending on which instance of Microsoft SQL you are using, uncomment the correct connection URL. */
-//    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;";
-    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;";
+    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLDEV2017;databaseName=Netflix Statistix;integratedSecurity=true;";
+//    private final String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix Statistix;integratedSecurity=true;";
     private Connection connection = null;
 
     /** Connects to the database. */

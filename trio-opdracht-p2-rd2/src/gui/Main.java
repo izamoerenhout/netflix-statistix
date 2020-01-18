@@ -17,9 +17,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/MainMenu.fxml"));
-        this.primaryStage = primaryStage;
-        primaryStage.setTitle("Netflix Statistix by S. Jaspers, I. Moerenhout & Z. Usmaeva");
+        Main.primaryStage = primaryStage;
+        primaryStage.setTitle("Netflix Statistix by S. Jaspers (2152854), I. Moerenhout (2157885) & Z. Usmaeva (2151793)");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
