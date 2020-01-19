@@ -1,6 +1,6 @@
 package database.dao;
 
-import appLogic.Profile;
+import domain.Profile;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

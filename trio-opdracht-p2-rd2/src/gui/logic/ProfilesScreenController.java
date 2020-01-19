@@ -1,6 +1,6 @@
 package gui.logic;
 
-import appLogic.Profile;
+import domain.Profile;
 import database.DatabaseConnector;
 import database.dao.ProfileDAO;
 import gui.Main;
@@ -82,9 +82,43 @@ public class ProfilesScreenController implements Initializable {
     /** Calls insertProfile from ProfileDAO and adds a new profile into the database. */
     public void addProfile() {
         ProfileDAO profile = new ProfileDAO(new DatabaseConnector());
+        int age;
 
         // Convert user input to int, otherwise we cannot store it into a new Profile object.
-        int age = Integer.parseInt(ageInput.getText());
+        // Also make sures that the age field cannot be empty.
+        if (!ageInput.getText().isEmpty()) {
+            age = Integer.parseInt(ageInput.getText());
+        } else {
+            Alert noAge = new Alert(Alert.AlertType.WARNING);
+            noAge.setTitle("Profile creation failed");
+            noAge.setHeaderText(null);
+            noAge.setContentText("Please enter an age.");
+            noAge.show();
+            profileNameInput.clear();
+            emailInput.clear();
+            return;
+        }
+
+        // Make sure the other fields cannot be empty either before adding to the database.
+        if (emailInput.getText().isEmpty()) {
+            Alert noEmail = new Alert(Alert.AlertType.WARNING);
+            noEmail.setTitle("Profile creation failed");
+            noEmail.setHeaderText(null);
+            noEmail.setContentText("Please enter an email address.");
+            noEmail.show();
+            profileNameInput.clear();
+            ageInput.clear();
+            return;
+        } else if (profileNameInput.getText().isEmpty()) {
+            Alert noProfileName = new Alert(Alert.AlertType.WARNING);
+            noProfileName.setTitle("Profile creation failed");
+            noProfileName.setHeaderText(null);
+            noProfileName.setContentText("Please enter a profile name.");
+            noProfileName.show();
+            emailInput.clear();
+            ageInput.clear();
+            return;
+        }
 
         boolean successful = profile.insertProfile(emailInput.getText(), profileNameInput.getText(), age);
 

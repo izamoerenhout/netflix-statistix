@@ -1,4 +1,4 @@
-package appLogic.overviewModelObjects;
+package domain.overviewDomain;
 
 /** Model Object for Overview 3. */
 public class Overview3 {

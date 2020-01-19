@@ -1,6 +1,6 @@
-package appLogicTest;
+package domainTest;
 
-import appLogic.Account;
+import domain.Account;
 import org.junit.jupiter.api.*;
 
 /** Test class for the Account model object. */

@@ -1,6 +1,6 @@
 package gui.logic;
 
-import appLogic.WatchedProgram;
+import domain.WatchedProgram;
 import database.DatabaseConnector;
 import database.dao.WatchedProgramDAO;
 import gui.Main;
@@ -85,11 +85,62 @@ public class WatchedProgramsScreenController implements Initializable {
     /** Calls insertWatchedProgram from WatchedProgramDAO and populates the TableView. */
     public void addWatchedProgram() {
         WatchedProgramDAO watched = new WatchedProgramDAO(new DatabaseConnector());
+        int progId;
+        int pctWatched;
 
         // Convert the user input in the fields "Program id" and "% watched" to an int
         // in order to store them into a new watched_program object.
-        int progId = Integer.parseInt(programIdInput.getText());
-        int pctWatched = Integer.parseInt(pctWatchedInput.getText());
+        // Also make sure these fields cannot be empty.
+        if (!programIdInput.getText().isEmpty()) {
+            progId = Integer.parseInt(programIdInput.getText());
+        } else {
+            Alert noProgramId = new Alert(Alert.AlertType.WARNING);
+            noProgramId.setTitle("Watched program creation failed");
+            noProgramId.setHeaderText(null);
+            noProgramId.setContentText("Please enter a program id.");
+            noProgramId.show();
+            emailInput.clear();
+            profileNameInput.clear();
+            pctWatchedInput.clear();
+            return;
+        }
+
+        if (!pctWatchedInput.getText().isEmpty()) {
+            pctWatched = Integer.parseInt(pctWatchedInput.getText());
+        } else {
+            Alert noPctWatched = new Alert(Alert.AlertType.WARNING);
+            noPctWatched.setTitle("Watched program creation failed");
+            noPctWatched.setHeaderText(null);
+            noPctWatched.setContentText("Please enter a percentage watched.");
+            noPctWatched.show();
+            emailInput.clear();
+            profileNameInput.clear();
+            programIdInput.clear();
+            return;
+        }
+
+        // Make sure the other fields cannot be empty either before adding to the database.
+        if (emailInput.getText().isEmpty()) {
+            Alert noEmail = new Alert(Alert.AlertType.WARNING);
+            noEmail.setTitle("Watched program creation failed");
+            noEmail.setHeaderText(null);
+            noEmail.setContentText("Please enter an email address.");
+            noEmail.show();
+            profileNameInput.clear();
+            programIdInput.clear();
+            pctWatchedInput.clear();
+            return;
+        } else if (profileNameInput.getText().isEmpty()) {
+            Alert noProfileName = new Alert(Alert.AlertType.WARNING);
+            noProfileName.setTitle("Watched program creation failed");
+            noProfileName.setHeaderText(null);
+            noProfileName.setContentText("Please enter a profile name.");
+            noProfileName.show();
+            emailInput.clear();
+            programIdInput.clear();
+            pctWatchedInput.clear();
+            return;
+        }
 
         boolean successful = watched.insertWatchedProgram(emailInput.getText(), profileNameInput.getText(), progId, pctWatched);
 

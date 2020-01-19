@@ -1,6 +1,6 @@
-package appLogicTest;
+package domainTest;
 
-import appLogic.WatchedProgram;
+import domain.WatchedProgram;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -127,7 +127,7 @@ class WatchedProgramTest {
     void setPctWatchedWithInputAbove100ReturnsIllegalArgumentException() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> testWatchedProgram.setPctWatched(105));
 
-        String expectedMessage = "Percentage watched has to be between 0 and 100.";
+        String expectedMessage = "Percentage watched should be between 0 and 100.";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
@@ -137,7 +137,7 @@ class WatchedProgramTest {
     void setPctWatchedWithNegativeInputReturnsIllegalArgumentException() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> testWatchedProgram.setPctWatched(-5));
 
-        String expectedMessage = "Percentage watched has to be between 0 and 100.";
+        String expectedMessage = "Percentage watched should be between 0 and 100.";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));

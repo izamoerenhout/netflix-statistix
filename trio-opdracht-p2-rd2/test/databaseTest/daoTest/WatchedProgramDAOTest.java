@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /** Test class for the WatchedProgram Data Access Object. */
 class WatchedProgramDAOTest {
     private WatchedProgramDAO testDAO;

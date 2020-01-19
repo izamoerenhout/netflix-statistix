@@ -1,6 +1,6 @@
 package database.dao;
 
-import appLogic.WatchedProgram;
+import domain.WatchedProgram;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

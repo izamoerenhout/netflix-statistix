@@ -1,6 +1,6 @@
 package gui.logic.overviewControllers;
 
-import appLogic.overviewModelObjects.Overview4;
+import domain.overviewDomain.Overview4;
 import database.DatabaseConnector;
 import database.dao.overviewDAOs.Overview4DAO;
 import gui.Main;

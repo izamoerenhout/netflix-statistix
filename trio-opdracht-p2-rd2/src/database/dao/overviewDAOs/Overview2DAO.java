@@ -1,6 +1,6 @@
 package database.dao.overviewDAOs;
 
-import appLogic.overviewModelObjects.Overview2;
+import domain.overviewDomain.Overview2;
 import database.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -1,4 +1,4 @@
-package appLogic;
+package domain;
 
 import javafx.scene.control.Alert;
 
@@ -69,13 +69,7 @@ public class WatchedProgram {
 
     public void setPctWatched(int pctWatched) {
         if (pctWatched < 0 || pctWatched > 100) {
-            Alert failed = new Alert(Alert.AlertType.WARNING);
-            failed.setTitle("Percentage update failed");
-            failed.setHeaderText(null);
-            failed.setContentText("Percentage watched should be between 0 and 100.");
-            failed.show();
             throw new IllegalArgumentException("Percentage watched should be between 0 and 100.");
-
         } else {
             this.pctWatched = pctWatched;
         }

@@ -1,6 +1,6 @@
 package gui.logic.overviewControllers;
 
-import appLogic.Account;
+import domain.Account;
 import database.DatabaseConnector;
 import database.dao.overviewDAOs.Overview5DAO;
 import gui.Main;
@@ -14,7 +14,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.net.URL;
-import java.sql.Time;
 import java.util.ResourceBundle;
 
 /** Controller for Overview 5. */
@@ -26,7 +25,7 @@ public class Overview5Controller implements Initializable {
     public TableColumn<Account, String> col_email;
     public TableColumn<Account, String> col_name;
     public TableColumn<Account, String> col_address;
-    public TableColumn<Account, Time> col_city;
+    public TableColumn<Account, String> col_city;
 
     /** Returns to the Overview Selection screen. */
     public void returnToOverviewSelectionScreen() throws Exception {

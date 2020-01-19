@@ -1,6 +1,6 @@
 package gui.logic;
 
-import appLogic.Account;
+import domain.Account;
 import database.dao.AccountDAO;
 import database.DatabaseConnector;
 import gui.Main;
@@ -83,6 +83,50 @@ public class AccountsScreenController implements Initializable {
     /** Calls insertAccount from AccountDAO and adds a new account into the database. */
     public void addAccount() {
         AccountDAO accountDAO = new AccountDAO(new DatabaseConnector());
+
+        // Make sure no fields are empty before adding to the database.
+        if (emailInput.getText().isEmpty()) {
+            Alert noEmail = new Alert(Alert.AlertType.WARNING);
+            noEmail.setTitle("Account creation failed");
+            noEmail.setHeaderText(null);
+            noEmail.setContentText("Please enter an email address.");
+            noEmail.show();
+            nameInput.clear();
+            addressInput.clear();
+            cityInput.clear();
+            return;
+        } else if (nameInput.getText().isEmpty()) {
+            Alert noName = new Alert(Alert.AlertType.WARNING);
+            noName.setTitle("Account creation failed");
+            noName.setHeaderText(null);
+            noName.setContentText("Please enter a name.");
+            noName.show();
+            emailInput.clear();
+            addressInput.clear();
+            cityInput.clear();
+            return;
+        } else if (addressInput.getText().isEmpty()) {
+            Alert noAddress = new Alert(Alert.AlertType.WARNING);
+            noAddress.setTitle("Account creation failed");
+            noAddress.setHeaderText(null);
+            noAddress.setContentText("Please enter an address.");
+            noAddress.show();
+            nameInput.clear();
+            emailInput.clear();
+            cityInput.clear();
+            return;
+        } else if (cityInput.getText().isEmpty()) {
+            Alert noCity = new Alert(Alert.AlertType.WARNING);
+            noCity.setTitle("Account creation failed");
+            noCity.setHeaderText(null);
+            noCity.setContentText("Please enter a city.");
+            noCity.show();
+            nameInput.clear();
+            emailInput.clear();
+            addressInput.clear();
+            return;
+        }
+
         boolean successful = accountDAO.insertAccount(emailInput.getText(), nameInput.getText(), addressInput.getText(), cityInput.getText());
 
         if (successful) {

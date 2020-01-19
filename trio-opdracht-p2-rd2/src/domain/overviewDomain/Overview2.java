@@ -1,20 +1,23 @@
-package appLogic.overviewModelObjects;
+package domain.overviewDomain;
 
-/** Model Object for Overview 1. */
-public class Overview1 {
+/** Model Object for Overview 2. */
+public class Overview2 {
+    private String email;
     private int programId;
     private String episodeNr;
     private String episodeName;
     private int avgPctWatched;
 
-    /** Class constructor
+    /** Class constructor.
      *
+     * @param email The email address of the account that has been selected.
      * @param programId The episode's program id.
      * @param episodeNr The episode's number.
      * @param episodeName The episode's name.
      * @param avgPctWatched The average percentage the episode has been watched.
      */
-    public Overview1(int programId, String episodeNr, String episodeName, int avgPctWatched) {
+    public Overview2(String email, int programId, String episodeNr, String episodeName, int avgPctWatched) {
+        this.email = email;
         this.programId = programId;
         this.episodeNr = episodeNr;
         this.episodeName = episodeName;
@@ -26,6 +29,14 @@ public class Overview1 {
     }
 
     /** Getters and setters. */
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public int getProgramId() {
         return programId;
     }

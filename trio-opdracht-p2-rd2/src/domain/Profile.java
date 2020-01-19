@@ -1,4 +1,4 @@
-package appLogic;
+package domain;
 
 /** Model Object for the Profiles screen. */
 public class Profile {

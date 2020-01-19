@@ -1,4 +1,4 @@
-package appLogic.overviewModelObjects;
+package domain.overviewDomain;
 
 import java.sql.Time;
 

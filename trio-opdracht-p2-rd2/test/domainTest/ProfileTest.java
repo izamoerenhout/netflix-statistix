@@ -1,6 +1,6 @@
-package appLogicTest;
+package domainTest;
 
-import appLogic.Profile;
+import domain.Profile;
 import org.junit.jupiter.api.*;
 
 /** Test class for the Profile model object. */

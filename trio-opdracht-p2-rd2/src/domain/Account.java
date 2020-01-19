@@ -1,4 +1,4 @@
-package appLogic;
+package domain;
 
 /** Model Object for the Accounts screen and Overview 5. */
 public class Account {
